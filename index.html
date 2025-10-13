@@ -67,6 +67,13 @@
         border-radius: 8px;
       }
 
+      .research-image-lower {
+        width: 180px;
+        height: auto;
+        border-radius: 8px;
+        margin-top: 20px;
+      }
+
       .research-details {
         flex-grow: 1;
       }
@@ -81,6 +88,38 @@
       .research-authors {
         font-size: 14px;
         color: #555;
+        margin-bottom: 8px;
+      }
+
+      .research-publication {
+        font-size: 14px;
+        margin-bottom: 5px;
+      }
+
+      .publication-status {
+        font-style: italic;
+        color: #2c5aa0;
+        font-weight: 500;
+        background-color: #f0f4ff;
+        padding: 2px 6px;
+        border-radius: 4px;
+        display: inline-block;
+        margin-right: 8px;
+      }
+
+      .publication-links {
+        display: inline-block;
+      }
+
+      .publication-links a {
+        color: #2c5aa0;
+        text-decoration: none;
+        margin-left: 5px;
+        font-weight: 500;
+      }
+
+      .publication-links a:hover {
+        text-decoration: underline;
       }
       @media screen and (max-width: 768px) {
       .header-container {
@@ -129,14 +168,14 @@
   <div class="header-container">
     <div class="left-content">
         <h1 class="name-title">Chloe Yang 杨珺轲</h1>
-        <p> I recently earned my bachelor's degree in Statistics with minors in Computer Science and Mathematics from the University of Illinois Urbana-Champaign.
+        <p> I'm a first year Ph.D student in Biostatistics in The Ohio State Unisveristy. I earned my bachelor's degree in Statistics with minors in Computer Science and Mathematics from the University of Illinois Urbana-Champaign.
         </p>
         <p>
             In my undergraduate years, I was fortunate to work with <a href="https://stat.illinois.edu/directory/profile/pamelapm" target="_blank">Prof. Pamela Martinez</a>, 
             <a href="https://kelly-findley.github.io/" target="_blank">Prof. Kelly Findley</a>, and <a href="https://sib.illinois.edu/directory/profile/sll4" target="_blank"> Dr. Sophie Larsen</a>.
         </p>
         <p>
-            My research focuses on statistical modeling of infectious diseases.
+            My research develops statistical models and machine learning methods for biological and health applications, with particular focus on infectious disease epidemiology.
         </p>
         <p style="text-align:center">
             <a href="https://github.com/chloeyjk">Github</a> &nbsp;/&nbsp;
@@ -171,8 +210,66 @@
                         Mok, Saki Takahashi, Alicia N. M. Kraay, Nicholas C. Wu, and Pamela P.
                         Martinez
                       </p>
-                      <p>
-                        <a href="https://www.medrxiv.org/content/10.1101/2024.12.10.24318816v1" target="_blank">[medRxiv]</a>
+                      <p class="research-publication">
+                        <span class="publication-status">Accepted to Epidemics (2025)</span>
+                        <span class="publication-links">
+                          <a href="https://doi.org/10.1016/j.epidem.2025.100859" target="_blank">[DOI]</a>
+                          <a href="https://www.medrxiv.org/content/10.1101/2024.12.10.24318816v1" target="_blank">[medRxiv]</a>
+                          <a href="https://uofi.app.box.com/s/6qewhllvtmrk5sjiwqnpxoyuuhftmuxe" target="_blank">[Data & Code]</a>
+                        </span>
+                      </p>
+                    </div>
+                  </div>
+
+                  <div class="research-item">
+                    <img src="images/beetleFlow.png" alt="beetleFlow example image" class="research-image-lower">
+                    <div class="research-details">
+                      <p class="research-title"> BeetleFlow: An Integrative Deep Learning Pipeline for Beetle Image Processing</p>
+                      <p class="research-authors">
+                        Fangxun Liu, S M Rayeed, Samuel Stevens, Alyson East, Cheng Hsuan Chiang, Colin Lee, Daniel Yi, <b>Junke Yang</b>, Tejas Naik, Ziyi Wang, Connor Kilrain, Elijah H Buckwalter, Jiacheng Hou, Saul Ibaven Bueno, Shuheng Wang, Xinyue Ma, Yifan Liu, Zhiyuan Tao, Ziheng Zhang, Sydne Record, Charles V. Stewart, Wei-Lun Chao. 
+                      </p>
+                      <p class="research-publication">
+                        <span class="publication-status"> Accepted to NeurIPS 2025 Workshop Imageomics (2025)</span>
+                        <!-- <span class="publication-links">
+                          <a href="https://doi.org/10.1080/26939169.2025.2520206" target="_blank">[DOI]</a>
+                        </span> -->
+                      </p>
+                    </div>
+                  </div>
+
+                  <div class="research-item">
+                    <img src="images/segragation.png" alt="segragation example image" class="research-image">
+                    <div class="research-details">
+                      <p class="research-title"> Community connectivity and self-isolation as strategies to reduce
+the burden of respiratory diseases</p>
+                      <p class="research-authors">
+                        Soren L. Larsen, Erin Haslett, Annika Venegas, Lydia Schieleit, <b>Junke Yang</b>, Ayesha S.
+Mahmud, and Pamela P. Martinez
+                      </p>
+                      <p class="research-publication">
+                        <span class="publication-status">Under Review (2025+)</span>
+                        <!-- <span class="publication-links">
+                          <a href="https://doi.org/10.1016/j.epidem.2025.100859" target="_blank">[DOI]</a>
+                          <a href="https://www.medrxiv.org/content/10.1101/2024.12.10.24318816v1" target="_blank">[medRxiv]</a>
+                          <a href="https://uofi.app.box.com/s/6qewhllvtmrk5sjiwqnpxoyuuhftmuxe" target="_blank">[Data & Code]</a>
+                        </span> -->
+                      </p>
+                    </div>
+                  </div>
+
+
+                  <div class="research-item">
+                    <img src="images/stat edu.png" alt="stat edu example image" class="research-image-lower">
+                    <div class="research-details">
+                      <p class="research-title"> Why Come to Class? Post-Pandemic Perspectives from Students in an Introductory Statistics Course</p>
+                      <p class="research-authors">
+                        Kelly Findley, Mehmet Aktas, and <b>Junke Yang</b>. 
+                      </p>
+                      <p class="research-publication">
+                        <span class="publication-status">Journal of Statistics and Data Science Education (2025)</span>
+                        <span class="publication-links">
+                          <a href="https://doi.org/10.1080/26939169.2025.2520206" target="_blank">[DOI]</a>
+                        </span>
                       </p>
                     </div>
                   </div>
@@ -180,6 +277,8 @@
               </tr>
             </tbody>
           </table>
+
+          
           
 
           
