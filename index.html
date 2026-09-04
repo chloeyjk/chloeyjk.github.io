@@ -1,287 +1,95 @@
-<!DOCTYPE HTML>
+<!doctype html>
 <html lang="en">
 <head>
-  <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <title>Chloe &quot;Junke&quot; Yang</title>
-    <meta name="author" content="Chloe &quot;Junke&quot; Yang">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" href="stylesheet.css">
-    <style>
-      body {
-        font-family: Arial, sans-serif;
-        margin: 0;
-        padding: 0;
-        max-width: 100%;
-        overflow-x: hidden; 
-      }
-      .header-container {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        max-width: 1000px;
-        margin: 20px auto;
-        padding: 20px;
-      }
-  
-      .left-content {
-        width: 60%;
-        text-align: left;
-      }
-  
-      .right-content {
-        width: 30%;
-        text-align: center;
-      }
-  
-      .profile-photo {
-        width: 100%;
-        max-width: 225px;
-        border-radius: 50%;
-      }
-  
-      .name-title {
-        font-size: 28px;
-        font-weight: bold;
-        color: black;
-        margin-bottom: 10px;
-      }
-      .section-title {
-        font-size: 24px;
-        font-weight: bold;
-        text-align: left;
-        color: black;
-        margin: 20px 0;
-      }
-
-      .research-item {
-        display: flex;
-        align-items: flex-start;
-        margin-top: 10px;
-        gap: 20px;
-      }
-
-      .research-image {
-        width: 180px;
-        height: auto;
-        border-radius: 8px;
-      }
-
-      .research-image-lower {
-        width: 180px;
-        height: auto;
-        border-radius: 8px;
-        margin-top: 20px;
-      }
-
-      .research-details {
-        flex-grow: 1;
-      }
-
-      .research-title {
-        font-size: 18px;
-        font-weight: bold;
-        color: #333;
-        margin-bottom: 5px;
-      }
-
-      .research-authors {
-        font-size: 14px;
-        color: #555;
-        margin-bottom: 8px;
-      }
-
-      .research-publication {
-        font-size: 14px;
-        margin-bottom: 5px;
-      }
-
-      .publication-status {
-        font-style: italic;
-        color: #2c5aa0;
-        font-weight: 500;
-        background-color: #f0f4ff;
-        padding: 2px 6px;
-        border-radius: 4px;
-        display: inline-block;
-        margin-right: 8px;
-      }
-
-      .publication-links {
-        display: inline-block;
-      }
-
-      .publication-links a {
-        color: #2c5aa0;
-        text-decoration: none;
-        margin-left: 5px;
-        font-weight: 500;
-      }
-
-      .publication-links a:hover {
-        text-decoration: underline;
-      }
-      @media screen and (max-width: 768px) {
-      .header-container {
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-      }
-
-      .left-content {
-        width: 100%;
-        text-align: center;
-      }
-
-      .right-content {
-        width: 100%;
-        margin-top: 10px;
-      }
-
-      .profile-photo {
-        max-width: 150px; /* Slightly smaller on mobile */
-      }
-
-      .research-item {
-        flex-direction: column;
-        text-align: center;
-      }
-
-      .research-image {
-        width: 100%;
-        max-width: 300px;
-        margin: 0 auto;
-      }
-
-      .research-title {
-        font-size: 16px;
-      }
-    }
-
-
-    </style>
-  </head>
-  </style>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Chloe “Junke” Yang is a PhD student in Biostatistics at The Ohio State University studying statistical methods for health and biology.">
+  <meta name="theme-color" content="#f7f7f3">
+  <title>Chloe “Junke” Yang</title>
+  <link rel="stylesheet" href="stylesheet.css">
 </head>
-<script async type="text/javascript" src="static/js/index.js"></script>
 <body>
-  <div class="header-container">
-    <div class="left-content">
-        <h1 class="name-title">Chloe Yang 杨珺轲</h1>
-        <p> I'm a first year Ph.D student in Biostatistics in The Ohio State Unisveristy. I earned my bachelor's degree in Statistics with minors in Computer Science and Mathematics from the University of Illinois Urbana-Champaign.
-        </p>
-        <p>
-            In my undergraduate years, I was fortunate to work with <a href="https://stat.illinois.edu/directory/profile/pamelapm" target="_blank">Prof. Pamela Martinez</a>, 
-            <a href="https://kelly-findley.github.io/" target="_blank">Prof. Kelly Findley</a>, and <a href="https://sib.illinois.edu/directory/profile/sll4" target="_blank"> Dr. Sophie Larsen</a>.
-        </p>
-        <p>
-            My research develops statistical models and machine learning methods for biological and health applications, with particular focus on infectious disease epidemiology.
-        </p>
-        <p style="text-align:center">
-            <a href="https://github.com/chloeyjk">Github</a> &nbsp;/&nbsp;
-            <a href="https://www.linkedin.com/in/chloe-yang-a6bb2a280/">LinkedIn</a> &nbsp;/&nbsp;
-            <a href="https://scholar.google.com/citations?user=OnC1ohwAAAAJ&hl=en">Google Scholar</a> &nbsp;/&nbsp;
-            <a href="#" id="email-link" onclick="copyEmail()">Email</a>
-        </p>
-    </div>
-    <div class="right-content">
-        <img src="images/headshot.jpg" alt="Chloe Yang" class="profile-photo">
-    </div>
-</div>
+  <header class="site-header">
+    <a class="wordmark" href="#top" aria-label="Chloe Yang, home">CY</a>
+    <nav aria-label="Primary navigation"><a href="#about">About</a><a href="#research">Research</a></nav>
+  </header>
 
+  <main id="top">
+    <section class="intro" id="about">
+      <div class="intro-copy">
+        <p class="eyebrow">Biostatistics · Infectious disease epidemiology</p>
+        <h1>Chloe <span>“Junke”</span> Yang <span class="chinese">杨珺轲</span></h1>
+        <p class="lede">I’m a second-year PhD student in Biostatistics at The Ohio State University. I develop statistical models and machine learning methods for biological and health applications, with a particular focus on infectious disease epidemiology.</p>
+        <p class="background">I earned my bachelor’s degree in Statistics, with minors in Computer Science and Mathematics, from the University of Illinois Urbana-Champaign. As an undergraduate, I worked with <a href="https://stat.illinois.edu/directory/profile/pamelapm">Pamela Martinez</a>, <a href="https://kelly-findley.github.io/">Kelly Findley</a>, and <a href="https://sib.illinois.edu/directory/profile/sll4">Soren Larsen</a>.</p>
+        <div class="links" aria-label="Profiles">
+          <a href="https://github.com/chloeyjk">GitHub <span aria-hidden="true">↗</span></a>
+          <a href="https://www.linkedin.com/in/chloe-yang-a6bb2a280/">LinkedIn <span aria-hidden="true">↗</span></a>
+          <a href="https://scholar.google.com/citations?user=OnC1ohwAAAAJ&hl=en">Google Scholar <span aria-hidden="true">↗</span></a>
+        </div>
+      </div>
+      <figure class="portrait-wrap"><img class="portrait" src="images/headshot.jpg" alt="Portrait of Chloe Yang"></figure>
+    </section>
 
-  <table style="width:100%;max-width:1000px;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
-    <tbody>
-      <tr style="padding:0px">
-        <td style="padding:0px">
+    <section class="research" id="research">
+      <div class="section-heading">
+        <p class="eyebrow">Selected work</p>
+        <h2>Research</h2>
+        <p>Grouped by the questions and methods that connect the work.</p>
+      </div>
 
-          <table style="width:100%; max-width:1000px; border:0px; border-spacing:0px; border-collapse:separate; margin-right:auto; margin-left:auto;">
-            <tbody>
-              <tr>
-                <td style="padding:20px; width:100%; vertical-align:middle">
-                  <h2 class="section-title">Research</h2> <!-- Updated title style -->
-                  <div class="research-item">
-                    <img src="images/seroprevalence.jpg" alt="seroprevalence example image" class="research-image">
-                    <div class="research-details">
-                      <p class="research-title"> Reimagining the serocatalytic model for infectious diseases: a case study of common coronaviruses</p>
-                      <p class="research-authors">
-                        Sophie L. Larsen, <b>Junke Yang*</b>, Huibin Lv*, Yang Wei Huan, Qiwen Teo, Tossapol
-                        Pholcharee, Ruipeng Lei, Akshita B Gopal, Evan K. Shao, Logan Talmage, Chris K. P.
-                        Mok, Saki Takahashi, Alicia N. M. Kraay, Nicholas C. Wu, and Pamela P.
-                        Martinez
-                      </p>
-                      <p class="research-publication">
-                        <span class="publication-status">Accepted to Epidemics (2025)</span>
-                        <span class="publication-links">
-                          <a href="https://doi.org/10.1016/j.epidem.2025.100859" target="_blank">[DOI]</a>
-                          <a href="https://www.medrxiv.org/content/10.1101/2024.12.10.24318816v1" target="_blank">[medRxiv]</a>
-                          <a href="https://uofi.app.box.com/s/6qewhllvtmrk5sjiwqnpxoyuuhftmuxe" target="_blank">[Data & Code]</a>
-                        </span>
-                      </p>
-                    </div>
-                  </div>
+      <div class="research-group">
+        <div class="group-label"><span>01</span><h3>Infectious disease &amp; health behavior</h3></div>
+        <div class="publication-list">
+          <article class="publication">
+            <div class="publication-meta"><span>2026</span><span>medRxiv preprint</span></div>
+            <h4><a href="https://doi.org/10.64898/2026.05.26.26354179">Same household, different choices: variation in health behaviors related to respiratory viruses in Illinois</a></h4>
+            <p>Soren L. Larsen*, <strong>Junke Yang*</strong>, Erin M. Haslett, Alyssa Anastasi, Annika Venegas, Lydia Schieleit, Ayesha S. Mahmud, and Pamela P. Martinez</p>
+          </article>
+          <article class="publication">
+            <div class="publication-meta"><span>2025</span><span>arXiv preprint</span></div>
+            <h4><a href="https://arxiv.org/abs/2512.23188">Incorporating authority perception, economic status, and behavioral response in infectious disease control</a></h4>
+            <p>Huaning Liu, <strong>Junke Yang</strong>, Soren L. Larsen, Pamela P. Martinez, and Gökçe Dayanıklı</p>
+          </article>
+          <article class="publication">
+            <div class="publication-meta"><span>2025</span><span>Epidemics</span></div>
+            <h4><a href="https://doi.org/10.1016/j.epidem.2025.100859">Reimagining the serocatalytic model for infectious diseases: a case study of common coronaviruses</a></h4>
+            <p>Soren L. Larsen, <strong>Junke Yang*</strong>, Huibin Lv*, Yang Wei Huan, Qiwen Teo, Tossapol Pholcharee, Ruipeng Lei, Akshita B. Gopal, Evan K. Shao, Logan Talmage, Chris K. P. Mok, Saki Takahashi, Alicia N. M. Kraay, Nicholas C. Wu, and Pamela P. Martinez</p>
+            <div class="paper-links"><a href="https://www.medrxiv.org/content/10.1101/2024.12.10.24318816v1">Preprint</a><a href="https://uofi.app.box.com/s/6qewhllvtmrk5sjiwqnpxoyuuhftmuxe">Data &amp; code</a></div>
+          </article>
+        </div>
+      </div>
 
-                  <div class="research-item">
-                    <img src="images/beetleFlow.png" alt="beetleFlow example image" class="research-image-lower">
-                    <div class="research-details">
-                      <p class="research-title"> BeetleFlow: An Integrative Deep Learning Pipeline for Beetle Image Processing</p>
-                      <p class="research-authors">
-                        Fangxun Liu, S M Rayeed, Samuel Stevens, Alyson East, Cheng Hsuan Chiang, Colin Lee, Daniel Yi, <b>Junke Yang</b>, Tejas Naik, Ziyi Wang, Connor Kilrain, Elijah H Buckwalter, Jiacheng Hou, Saul Ibaven Bueno, Shuheng Wang, Xinyue Ma, Yifan Liu, Zhiyuan Tao, Ziheng Zhang, Sydne Record, Charles V. Stewart, Wei-Lun Chao. 
-                      </p>
-                      <p class="research-publication">
-                        <span class="publication-status"> Accepted to NeurIPS 2025 Workshop Imageomics (2025)</span>
-                        <!-- <span class="publication-links">
-                          <a href="https://doi.org/10.1080/26939169.2025.2520206" target="_blank">[DOI]</a>
-                        </span> -->
-                      </p>
-                    </div>
-                  </div>
+      <div class="research-group">
+        <div class="group-label"><span>02</span><h3>Machine learning &amp; computer vision</h3></div>
+        <div class="publication-list">
+          <article class="publication">
+            <div class="publication-meta"><span>2026</span><span>arXiv preprint</span></div>
+            <h4><a href="https://arxiv.org/abs/2607.03633">Probing identity-specific motion signatures: a controlled diagnostic study</a></h4>
+            <p>Yingtie Lei, Fangxun Liu, Baicheng Wu, Colin Lee, Ziheng Zhang, <strong>Junke Yang</strong>, Zhiyuan Tao, Xuyan Huang, Shuheng Wang, William Koran, Kyle Park, Elijah H. Buckwalter, Cheng-Hsuan Chiang, Tejas Naik, Daniel Yi, and Wei-Lun Chao</p>
+          </article>
+          <article class="publication">
+            <div class="publication-meta"><span>2025</span><span>NeurIPS Imageomics Workshop</span></div>
+            <h4><a href="https://arxiv.org/abs/2511.00255">BeetleFlow: an integrative deep learning pipeline for beetle image processing</a></h4>
+            <p>Fangxun Liu, S. M. Rayeed, Samuel Stevens, Alyson East, Cheng-Hsuan Chiang, Colin Lee, Daniel Yi, <strong>Junke Yang</strong>, Tejas Naik, Ziyi Wang, Connor Kilrain, Elijah H. Buckwalter, Jiacheng Hou, Saul Ibaven Bueno, Shuheng Wang, Xinyue Ma, Yifan Liu, Zhiyuan Tao, Ziheng Zhang, Sydne Record, Charles V. Stewart, and Wei-Lun Chao</p>
+          </article>
+        </div>
+      </div>
 
-                  <div class="research-item">
-                    <img src="images/segragation.png" alt="segragation example image" class="research-image">
-                    <div class="research-details">
-                      <p class="research-title"> Community connectivity and self-isolation as strategies to reduce
-the burden of respiratory diseases</p>
-                      <p class="research-authors">
-                        Soren L. Larsen, Erin Haslett, Annika Venegas, Lydia Schieleit, <b>Junke Yang</b>, Ayesha S.
-Mahmud, and Pamela P. Martinez
-                      </p>
-                      <p class="research-publication">
-                        <span class="publication-status">Under Review (2025+)</span>
-                        <!-- <span class="publication-links">
-                          <a href="https://doi.org/10.1016/j.epidem.2025.100859" target="_blank">[DOI]</a>
-                          <a href="https://www.medrxiv.org/content/10.1101/2024.12.10.24318816v1" target="_blank">[medRxiv]</a>
-                          <a href="https://uofi.app.box.com/s/6qewhllvtmrk5sjiwqnpxoyuuhftmuxe" target="_blank">[Data & Code]</a>
-                        </span> -->
-                      </p>
-                    </div>
-                  </div>
+      <div class="research-group">
+        <div class="group-label"><span>03</span><h3>Statistics education</h3></div>
+        <div class="publication-list">
+          <article class="publication">
+            <div class="publication-meta"><span>2025</span><span>Journal of Statistics and Data Science Education</span></div>
+            <h4><a href="https://doi.org/10.1080/26939169.2025.2520206">Why come to class? Post-pandemic perspectives from students in an introductory statistics course</a></h4>
+            <p>Kelly Findley, Mehmet Aktas, and <strong>Junke Yang</strong></p>
+          </article>
+        </div>
+      </div>
 
+      <p class="note">* Equal contribution. For the most current record, see <a href="https://scholar.google.com/citations?user=OnC1ohwAAAAJ&hl=en">Google Scholar</a>.</p>
+    </section>
+  </main>
 
-                  <div class="research-item">
-                    <img src="images/stat edu.png" alt="stat edu example image" class="research-image-lower">
-                    <div class="research-details">
-                      <p class="research-title"> Why Come to Class? Post-Pandemic Perspectives from Students in an Introductory Statistics Course</p>
-                      <p class="research-authors">
-                        Kelly Findley, Mehmet Aktas, and <b>Junke Yang</b>. 
-                      </p>
-                      <p class="research-publication">
-                        <span class="publication-status">Journal of Statistics and Data Science Education (2025)</span>
-                        <span class="publication-links">
-                          <a href="https://doi.org/10.1080/26939169.2025.2520206" target="_blank">[DOI]</a>
-                        </span>
-                      </p>
-                    </div>
-                  </div>
-                </td>
-              </tr>
-            </tbody>
-          </table>
-
-          
-          
-
-          
-
+  <footer><p>Chloe “Junke” Yang</p><a href="#top">Back to top ↑</a></footer>
 </body>
 </html>
