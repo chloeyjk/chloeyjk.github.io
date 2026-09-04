@@ -73,7 +73,7 @@ h1 .chinese { display: block; margin-top: 14px; color: var(--accent); font-size:
 .lede { max-width: 720px; font-size: clamp(19px, 2.1vw, 23px); line-height: 1.5; }
 .background { max-width: 690px; color: var(--muted); }
 .links { display: flex; flex-wrap: wrap; gap: 10px 22px; margin-top: 30px; }
-.links a, .paper-links a { color: var(--accent); font-size: 14px; font-weight: 700; text-decoration: none; }
+.links a { color: var(--accent); font-size: 14px; font-weight: 700; text-decoration: none; }
 .portrait-wrap { margin: 0; }
 .portrait {
   display: block;
@@ -100,7 +100,17 @@ h1 .chinese { display: block; margin-top: 14px; color: var(--accent); font-size:
 .publication h4 a { text-decoration: none; }
 .publication p { margin-bottom: 0; color: var(--muted); font-size: 14px; line-height: 1.55; }
 .publication strong { color: var(--ink); }
-.paper-links { display: flex; gap: 18px; margin-top: 12px; }
+.paper-links { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 14px; }
+.paper-links a {
+  padding: 4px 10px;
+  border: 1px solid #b7c8dd;
+  border-radius: 999px;
+  color: var(--accent);
+  font-size: 12px;
+  font-weight: 650;
+  text-decoration: none;
+}
+.paper-links a:hover, .paper-links a:focus-visible { background: var(--wash); border-color: var(--accent); }
 .note { margin: 0; color: var(--muted); font-size: 13px; }
 footer { padding: 28px 0 42px; border-top: 1px solid var(--line); display: flex; justify-content: space-between; color: var(--muted); font-size: 13px; }
 footer p { margin: 0; }
