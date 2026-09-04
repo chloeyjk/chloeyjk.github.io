@@ -99,6 +99,9 @@ h1 .chinese { display: block; margin-top: 14px; color: var(--accent); font-size:
 .experience-item h3 { margin: -5px 0 2px; font-family: "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, serif; font-size: 24px; font-weight: 400; line-height: 1.3; }
 .experience-item p { margin-bottom: 0; color: var(--muted); font-size: 14px; }
 .experience-item .company { margin-bottom: 8px; color: var(--ink); font-weight: 650; }
+.experience-item ul { margin: 16px 0 0; padding-left: 19px; color: var(--muted); font-size: 14px; }
+.experience-item li { margin-bottom: 9px; padding-left: 4px; }
+.experience-item li:last-child { margin-bottom: 0; }
 .research { position: relative; padding: 104px 0 70px; border-top: 1px solid var(--line); }
 .research::before { content: ""; position: absolute; z-index: -1; top: 0; bottom: 0; left: 50%; width: 100vw; transform: translateX(-50%); background: linear-gradient(90deg, var(--wash) 0, var(--wash) 31%, var(--bg) 31%); }
 .section-heading { max-width: 630px; margin-bottom: 64px; }
