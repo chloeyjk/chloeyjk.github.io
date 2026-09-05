@@ -11,7 +11,7 @@
 <body>
   <header class="site-header">
     <a class="wordmark" href="#top" aria-label="Chloe Yang, home">CY</a>
-    <nav aria-label="Primary navigation"><a href="#about">About</a><a href="#research">Research</a><a href="#experience">Experience</a></nav>
+    <nav aria-label="Primary navigation"><a href="#projects">Projects</a><a href="#experience">Experience</a><a href="#research">Research</a></nav>
   </header>
 
   <main id="top">
@@ -33,6 +33,43 @@
       </figure>
     </section>
 
+    <section class="projects" id="projects">
+      <div class="section-heading">
+        <p class="section-kicker">Selected projects</p>
+        <h2>Things I’ve built</h2>
+        <p>Applied AI products spanning agents, information retrieval, and backend systems.</p>
+      </div>
+
+      <div class="project-grid">
+        <article class="project project-featured">
+          <div class="project-index">Featured project</div>
+          <h3>EchoCast</h3>
+          <p class="project-summary">A backend platform that turns personalized news interests into concise podcast content through asynchronous ingestion and AI summarization.</p>
+          <p class="project-detail">Built JWT authentication, preference management, background Celery workers, database migrations, and GPT-4 summarization behind a documented FastAPI interface.</p>
+          <ul class="tech-list"><li>Python</li><li>FastAPI</li><li>Celery</li><li>Redis</li><li>PostgreSQL</li><li>OpenAI</li></ul>
+          <a class="project-link" href="https://github.com/chloeyjk/EchoCast">View source on GitHub</a>
+        </article>
+
+        <article class="project">
+          <div class="project-index">AI agent</div>
+          <h3>Biostat MCP Agent</h3>
+          <p class="project-summary">A cautious biostatistics analysis assistant that inspects project context and proposes reproducible analysis plans.</p>
+          <p class="project-detail">Separates facts, assumptions, and recommendations, with an explicit approval boundary before executing analysis code.</p>
+          <ul class="tech-list"><li>Python</li><li>MCP</li><li>Agent orchestration</li><li>Evaluation tests</li></ul>
+          <a class="project-link" href="https://github.com/chloeyjk/Biostat-MCP-Agent">View source on GitHub</a>
+        </article>
+
+        <article class="project">
+          <div class="project-index">Web application</div>
+          <h3>ShieldScale</h3>
+          <p class="project-summary">A startup insurance portal with plan comparison, article discovery, and an in-browser semantic search experience.</p>
+          <p class="project-detail">Built responsive routing and reusable components alongside TF-IDF retrieval, highlighted matches, and 52 unit tests.</p>
+          <ul class="tech-list"><li>React</li><li>Tailwind CSS</li><li>React Router</li><li>Jest</li><li>Information retrieval</li></ul>
+          <a class="project-link" href="https://github.com/chloeyjk/startup-insurance-portal">View source on GitHub</a>
+        </article>
+      </div>
+    </section>
+
     <section class="research" id="research">
       <div class="section-heading">
         <p class="section-kicker">Selected work</p>
@@ -41,8 +78,14 @@
       </div>
 
       <div class="research-group">
-        <div class="group-label"><h3>Public health &amp; health behavior</h3></div>
+        <div class="group-label"><h3>Causal inference &amp; public health</h3></div>
         <div class="publication-list">
+          <article class="publication">
+            <div class="publication-meta"><span>Forthcoming</span><span>Annals of Applied Statistics</span></div>
+            <h4><a href="https://imstat.org/journals-and-publications/annals-of-applied-statistics/annals-of-applied-statistics-next-issues/">A counterfactual framework for estimating infectious disease prevalence under repeated testing with symptomatic and contact-tracing components</a></h4>
+            <p>Jeongjin Lee, <strong>Junke Yang</strong>, Grzegorz Rempala, and Patrick Schnell</p>
+            <div class="paper-links"><a href="https://imstat.org/journals-and-publications/annals-of-applied-statistics/annals-of-applied-statistics-next-issues/">AOAS forthcoming</a></div>
+          </article>
           <article class="publication">
             <div class="publication-meta"><span>2026</span><span>medRxiv preprint</span></div>
             <h4><a href="https://doi.org/10.64898/2026.05.26.26354179">Same household, different choices: variation in health behaviors related to respiratory viruses in Illinois</a></h4>
