@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Weekly brief for the week of {{DATE}}: new work on agent evaluation and statistical methods.">
+  <title>Brief {{DATE}} — Chloe Yang</title>
+  <link rel="stylesheet" href="/assets/site.css">
+</head>
+<body>
+  <div class="shell">
+    <div class="page-head">
+      <p class="kicker">Weekly brief · {{DATE}}</p>
+      <h1>{{HEADLINE}}</h1>
+      <p class="lede">{{ONE_SENTENCE_SUMMARY}}</p>
+      <p class="meta"><a href="/research/briefs/">← All briefs</a> · Covers {{WINDOW_START}} to {{DATE}}</p>
+    </div>
+
+    <div class="prose">
+      <!-- One <article> per new catalog entry, strongest first. Omit the section if empty. -->
+      <h2>New this week</h2>
+      <article class="entry">
+        <div class="entry-meta"><span class="pill">{{TAG}}</span></div>
+        <p class="entry-title"><a href="/research/#{{ENTRY_ID}}">{{PAPER_TITLE}}</a></p>
+        <p class="entry-summary"><b>Method:</b> {{STATISTICAL_METHOD}}</p>
+        <p class="entry-summary"><b>Why it matters:</b> {{WHY_IT_MATTERS}}</p>
+        <span class="entry-venue">{{VENUE}}</span>
+        <span class="entry-links"><a href="{{SOURCE_URL}}">[Source]</a></span>
+      </article>
+
+      <!-- Follow-ups on entries already in the catalog. Omit the section if empty. -->
+      <h2>Progress</h2>
+      <ul>
+        <li><a href="/research/#{{ENTRY_ID}}">{{PAPER_TITLE}}</a>: {{UPDATE_NOTE}} (<a href="{{UPDATE_URL}}">source</a>)</li>
+      </ul>
+
+      <!-- Candidates the agent looked at and rejected, so the reviewer can overrule. -->
+      <h2>Considered, not added</h2>
+      <ul>
+        <li>{{TITLE}}: {{REASON}}</li>
+      </ul>
+    </div>
+
+    <footer class="site-foot">© Chloe Yang · Drafted by an agent, reviewed before publishing. The linked source is the authority.</footer>
+  </div>
+  <script src="/assets/site-nav.js"></script>
+</body>
+</html>

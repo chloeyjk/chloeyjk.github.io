@@ -18,18 +18,18 @@
     <div class="prose">
       <h2>The loop</h2>
       <ol>
-        <li><b>Collect.</b> Weekly, an agent (Claude Code) searches for new work on agent evaluation and statistical methods, using the <a href="/research/templates/#weekly-scan">weekly scan template</a>. It returns candidates only; it doesn't edit the site.</li>
-        <li><b>Verify.</b> Every candidate is checked against its primary source: arXiv abstract page, ACL Anthology, or the publisher. Title, authors, and date must match exactly. Anything the agent can't verify is dropped.</li>
-        <li><b>Triage.</b> I read the abstract, and the methods section for anything that sounds statistical, then decide whether it earns a place. The summary is rewritten in my words, stating what the paper actually does.</li>
-        <li><b>Add.</b> Append the entry to <code>research/catalog.json</code>. The <code>topics</code> field places it on the Methods pages. Never delete or silently rewrite an entry; add a correction instead.</li>
-        <li><b>Publish.</b> Run the tests, commit, and push. GitHub Pages redeploys in about a minute.</li>
+        <li><b>Scan (weekly, automated).</b> A scheduled Claude Code agent runs in the cloud once a week. It follows <code>.agent/weekly-scan.md</code>: search arXiv and lab blogs for the past 7 days, and keep only work where the statistical method matters.</li>
+        <li><b>Verify.</b> The agent opens every candidate's source page and copies the title and date from it. Anything it can't verify is dropped, never cited from memory.</li>
+        <li><b>Propose.</b> It adds entries and progress notes to <code>research/catalog.json</code>, writes a <a href="/research/briefs/">weekly brief</a>, runs the validator and tests, and opens a pull request. It never pushes to <code>main</code>.</li>
+        <li><b>Review.</b> I read the pull request: the sources, the summaries, and the "considered, not added" list. I edit anything wrong, then merge.</li>
+        <li><b>Publish.</b> Merging deploys the site through GitHub Pages within about a minute.</li>
       </ol>
 
       <h2>Rules</h2>
       <ul>
         <li><b>The source is the authority.</b> Summaries point to papers; they don't replace them.</li>
         <li><b>No unverified citations.</b> Language models invent plausible-looking references. A citation is only added after its source page has been opened.</li>
-        <li><b>Append-only.</b> The catalog is a research record. Its history, in git, shows how my reading evolved.</li>
+        <li><b>Append-only.</b> The catalog is a research record. Corrections and follow-ups go in an entry's <code>progress</code> notes; nothing is deleted.</li>
         <li><b>Public data only.</b> Nothing from coursework, unpublished lab work, or collaborators' drafts.</li>
       </ul>
 
@@ -42,12 +42,16 @@
           <tr><td>Navigation for every tab</td><td><code>assets/site-nav.js</code></td></tr>
           <tr><td>Shared styles / list renderer</td><td><code>assets/site.css</code>, <code>assets/entries.js</code></td></tr>
           <tr><td>EvalBench statistics</td><td><code>evalbench/stats.js</code></td></tr>
+          <tr><td>Weekly briefs</td><td><code>research/briefs/</code></td></tr>
+          <tr><td>Weekly agent instructions and brief template</td><td><code>.agent/weekly-scan.md</code>, <code>.agent/brief-template.html</code></td></tr>
+          <tr><td>Catalog validator</td><td><code>tools/validate-catalog.js</code></td></tr>
           <tr><td>Tests</td><td><code>tests/</code></td></tr>
         </tbody>
       </table></div>
 
       <h2>Before every push</h2>
-      <pre>node --test tests/*.test.js
+      <pre>node tools/validate-catalog.js
+node --test tests/*.test.js
 python3 -m http.server   # preview at http://localhost:8000/research/</pre>
     </div>
 

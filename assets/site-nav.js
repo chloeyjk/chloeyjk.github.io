@@ -7,6 +7,7 @@
 
   const NAV = [
     { label: "Research", href: "/research/" },
+    { label: "Briefs", href: "/research/briefs/" },
     { label: "In Practice", href: "/research/stories/" },
     { label: "Methods", items: [
       { label: "Uncertainty & Error Bars", href: "/research/methods/uncertainty/" },

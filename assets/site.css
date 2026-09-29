@@ -96,6 +96,10 @@ h3 { font-size: 17px; margin: 18px 0 6px; }
 .entry-venue { font-style: italic; color: var(--ink-soft); font-size: 14px; }
 .entry-links a { margin-right: 8px; font-size: 14px; font-weight: 700; }
 .status { padding: 24px 0; color: var(--ink-soft); }
+.pill-update { background: var(--warn-soft); color: var(--warn); }
+.progress { margin: 10px 0 0; padding: 8px 0 0 14px; border-left: 2px solid var(--line); list-style: none; font-size: 14px; }
+.progress li { margin-bottom: 4px; }
+.progress-date { font-family: var(--mono); font-size: 12px; color: var(--ink-soft); }
 
 /* Cards, tables, forms */
 .cards { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 14px; margin: 18px 0; }

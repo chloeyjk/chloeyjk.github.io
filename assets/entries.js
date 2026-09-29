@@ -1,7 +1,8 @@
 // Renders a filterable, searchable entry list from a JSON file.
 // Usage: <div data-entries="entries.json"></div> plus <p class="meta" data-updated></p> (optional).
 // Add data-topic="x" to show only items whose "topics" array contains x.
-// JSON shape: { "updated": "YYYY-MM-DD", "items": [{ id, tag, topics, title, summary, venue, links: [{label, url}], added }] }
+// JSON shape: { "updated": "YYYY-MM-DD", "items": [{ id, tag, topics, title, summary, venue, links: [{label, url}], added,
+//   progress: [{ at: "YYYY-MM-DD", note, links: [{label, url}] }] }] }  (progress is optional; follow-ups on an entry)
 (function () {
   "use strict";
 
@@ -22,21 +23,41 @@
     return MONTHS[month - 1] ? `${MONTHS[month - 1]} ${year}` : "Undated";
   }
 
-  function entryHtml(item) {
-    const links = (item.links || [])
+  function linksHtml(links) {
+    return (links || [])
       .filter((link) => link && isSafeUrl(link.url))
       .map((link) => `<a href="${escapeHtml(link.url)}" target="_blank" rel="noopener">[${escapeHtml(link.label)}]</a>`)
       .join("");
+  }
+
+  function progressHtml(progress) {
+    if (!Array.isArray(progress) || progress.length === 0) return "";
+    const rows = progress
+      .map((p) => `<li><span class="progress-date">${escapeHtml(p.at)}</span> ${escapeHtml(p.note)} <span class="entry-links">${linksHtml(p.links)}</span></li>`)
+      .join("");
+    return `<ul class="progress" aria-label="Updates">${rows}</ul>`;
+  }
+
+  function lastActivity(item) {
+    const dates = [item.added, ...(item.progress || []).map((p) => p.at)].map(String);
+    return dates.sort().at(-1);
+  }
+
+  function entryHtml(item) {
+    const links = linksHtml(item.links);
+    const updated = lastActivity(item) !== String(item.added) ? `<span class="pill pill-update">Updated ${escapeHtml(lastActivity(item))}</span>` : "";
     return `
       <article class="entry" id="${escapeHtml(item.id)}">
         <div class="entry-meta">
           ${item.tag ? `<span class="pill">${escapeHtml(item.tag)}</span>` : ""}
           <span>Added ${escapeHtml(item.added)}</span>
+          ${updated}
         </div>
         <p class="entry-title">${escapeHtml(item.title)}</p>
         ${item.summary ? `<p class="entry-summary">${escapeHtml(item.summary)}</p>` : ""}
         ${item.venue ? `<span class="entry-venue">${escapeHtml(item.venue)}</span> ` : ""}
         <span class="entry-links">${links}</span>
+        ${progressHtml(item.progress)}
       </article>`;
   }
 
@@ -54,7 +75,8 @@
     function matches(item) {
       if (state.tag !== "All" && item.tag !== state.tag) return false;
       if (!state.query) return true;
-      return [item.title, item.summary, item.venue, item.tag].join(" ").toLowerCase().includes(state.query);
+      const notes = (item.progress || []).map((p) => p.note);
+      return [item.title, item.summary, item.venue, item.tag, ...notes].join(" ").toLowerCase().includes(state.query);
     }
 
     function renderTags() {
