@@ -1,4 +1,13 @@
 {
   "updated": "2026-09-29",
-  "items": []
+  "items": [
+    {
+      "id": "brief-2026-09-29",
+      "tag": "Weekly",
+      "title": "Week of 2026-09-29: budget-constrained uncertainty and a reality check on run-to-run noise",
+      "summary": "7 new entries, 0 updates. The strongest is a minimax-optimal confidence-interval bound for repeated LLM evaluation under a fixed response budget, verified on a 16-model LiveCodeBench replay.",
+      "links": [{ "label": "Read brief", "url": "/research/briefs/2026-09-29.html" }],
+      "added": "2026-09-29"
+    }
+  ]
 }
