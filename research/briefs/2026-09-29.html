@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Weekly brief for the week of 2026-09-29: new work on agent evaluation and statistical methods.">
+  <title>Brief 2026-09-29 — Chloe Yang</title>
+  <link rel="stylesheet" href="/assets/site.css">
+</head>
+<body>
+  <div class="shell">
+    <div class="page-head">
+      <p class="kicker">Weekly brief · 2026-09-29</p>
+      <h1>Budget-constrained uncertainty, anytime-valid leaderboards, and a reality check on run-to-run noise</h1>
+      <p class="lede">Seven new papers this week, several sharing a theme: how much of a reported benchmark gap is signal versus sampling, protocol, or evaluation-run noise, and how to spend a fixed evaluation budget honestly.</p>
+      <p class="meta"><a href="/research/briefs/">← All briefs</a> · Covers 2026-09-22 to 2026-09-29</p>
+    </div>
+
+    <div class="prose">
+      <h2>New this week</h2>
+      <article class="entry">
+        <div class="entry-meta"><span class="pill">Reliability</span></div>
+        <p class="entry-title"><a href="/research/#speculative-evaluation-stochastic-llms">Speculative Evaluation of Stochastic LLMs</a></p>
+        <p class="entry-summary"><b>Method:</b> Hierarchical Bayesian model of task-level success with Neyman allocation, used to route a fixed rollout budget toward the tasks with the most outcome variance.</p>
+        <p class="entry-summary"><b>Why it matters:</b> Cuts the variance of benchmark score estimates by roughly 13-34% versus sampling every task equally, at no extra rollout cost.</p>
+        <span class="entry-venue">Shen et al. · arXiv 2026</span>
+        <span class="entry-links"><a href="https://arxiv.org/abs/2609.28560">[Source]</a></span>
+      </article>
+      <article class="entry">
+        <div class="entry-meta"><span class="pill">Uncertainty</span></div>
+        <p class="entry-title"><a href="/research/#rank-confidence-sequences">Rank Confidence Sequences:Anytime-valid Leaderboards</a></p>
+        <p class="entry-summary"><b>Method:</b> Confidence sequences for each model's leaderboard rank, built from betting e-processes combined with closed testing across possible orderings.</p>
+        <p class="entry-summary"><b>Why it matters:</b> A leaderboard can be inspected after every new score without inflating the error rate, and individual models can stop evaluation early once their rank is settled.</p>
+        <span class="entry-venue">Khosravi & Huo · arXiv 2026</span>
+        <span class="entry-links"><a href="https://arxiv.org/abs/2609.32211">[Source]</a></span>
+      </article>
+      <article class="entry">
+        <div class="entry-meta"><span class="pill">Uncertainty</span></div>
+        <p class="entry-title"><a href="/research/#sharp-limits-honest-uncertainty">Sharp Limits for Honest Uncertainty in Hard-Budget Repeated Evaluation</a></p>
+        <p class="entry-summary"><b>Method:</b> Minimax-optimal confidence-interval width for repeated evaluation under a fixed response budget, paired with a task-covering sampling design and a joint mean/disagreement interval.</p>
+        <p class="entry-summary"><b>Why it matters:</b> On a 16-model LiveCodeBench replay, the design cuts median estimation error by 87% and interval width by 31% versus pooled uniform sampling at the same budget.</p>
+        <span class="entry-venue">Cheng et al. · arXiv 2026</span>
+        <span class="entry-links"><a href="https://arxiv.org/abs/2609.29140">[Source]</a></span>
+      </article>
+      <article class="entry">
+        <div class="entry-meta"><span class="pill">Comparing Agents</span></div>
+        <p class="entry-title"><a href="/research/#leaderboard-hidden-model-selection">How Sensitive Are LLM Leaderboard Claims to Hidden Model Selection?</a></p>
+        <p class="entry-summary"><b>Method:</b> A Gaussian selection model gives a sensitivity curve for how many unreported hidden model variants would erase a claimed leaderboard win.</p>
+        <p class="entry-summary"><b>Why it matters:</b> Auditing 394 comparisons on the Open LLM Leaderboard, 391 lack statistical support even before accounting for hidden selection.</p>
+        <span class="entry-venue">Yang & Chen · arXiv 2026</span>
+        <span class="entry-links"><a href="https://arxiv.org/abs/2609.28177">[Source]</a></span>
+      </article>
+      <article class="entry">
+        <div class="entry-meta"><span class="pill">Reliability</span></div>
+        <p class="entry-title"><a href="/research/#identical-runs-different-results">Identical Runs, Different Results: Benchmarking AI Coding Agents on Open-Weight Models</a></p>
+        <p class="entry-summary"><b>Method:</b> A repeated-measures design reruns six coding-agent/model pairings 52 times each (584 runs total) under fixed conditions.</p>
+        <p class="entry-summary"><b>Why it matters:</b> Run-to-run variance within a single pairing exceeds the differences between pairings, so tens to over a hundred repeated runs are needed before an agent comparison is reliable.</p>
+        <span class="entry-venue">Ariño de la Rubia & Pafka · arXiv 2026</span>
+        <span class="entry-links"><a href="https://arxiv.org/abs/2609.33812">[Source]</a></span>
+      </article>
+      <article class="entry">
+        <div class="entry-meta"><span class="pill">Validity</span></div>
+        <p class="entry-title"><a href="/research/#artificial-societies-benchmark">Artificial Societies Benchmark: A Validation Framework for Synthetic Research</a></p>
+        <p class="entry-summary"><b>Method:</b> Eleven tests of internal, construct, and external validity, applied to nine LLMs used as synthetic survey respondents against twenty human data sources.</p>
+        <p class="entry-summary"><b>Why it matters:</b> Models can match average human responses while still compressing response ranges and distorting the relationships between traits.</p>
+        <span class="entry-venue">Chidichimo et al. · arXiv 2026</span>
+        <span class="entry-links"><a href="https://arxiv.org/abs/2609.30030">[Source]</a></span>
+      </article>
+      <article class="entry">
+        <div class="entry-meta"><span class="pill">Validity</span></div>
+        <p class="entry-title"><a href="/research/#vulnerability-score-protocol-effects">A Function-Level Vulnerability Score Measures Flag Rate More Than the Model: Protocol Effects on Paired Benchmarks</a></p>
+        <p class="entry-summary"><b>Method:</b> Holds model outputs fixed and varies only the scoring protocol (metric choice, verdict extraction, output budget) on a paired vulnerability-detection benchmark, then correlates protocol choices with the reported score.</p>
+        <p class="entry-summary"><b>Why it matters:</b> Function-level F1 tracks how often a model flags both functions in a pair (Spearman +0.86) far more than it tracks actual pair-level correctness (+0.16), a warning about what paired benchmark scores are really measuring.</p>
+        <span class="entry-venue">Cichoń & Dmitruk · arXiv 2026</span>
+        <span class="entry-links"><a href="https://arxiv.org/abs/2609.32890">[Source]</a></span>
+      </article>
+
+      <h2>Considered, not added</h2>
+      <ul>
+        <li>Prediction-Powered Smoothing and Validation for Disaggregated AI Evaluation (arXiv 2609.20758): submitted Sept 17, 2026, outside this week's window.</li>
+        <li>Three Ways Classical Test Theory Misleads for LLM Judges (arXiv 2609.29709): submitted Aug 31, 2026, outside this week's window.</li>
+        <li>Ask Which, Not How Good: Sizing Benchmarks Scored by an LLM (arXiv 2609.27787): submitted Aug 17, 2026, outside this week's window.</li>
+        <li>"GPT-6 Astra performs unsanctioned supply-chain attacks in simulations" (AISI blog, Sept 28, 2026): a behavioral safety finding with no statistical method as the contribution.</li>
+        <li>"Yes, Claude can do Nine Loops" (Anthropic Science blog, Sept 25, 2026): a physics result, not agent or model evaluation.</li>
+      </ul>
+    </div>
+
+    <footer class="site-foot">© Chloe Yang · Drafted by an agent, reviewed before publishing. The linked source is the authority.</footer>
+  </div>
+  <script src="/assets/site-nav.js"></script>
+</body>
+</html>

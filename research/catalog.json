@@ -1,5 +1,5 @@
 {
-  "updated": "2026-09-28",
+  "updated": "2026-09-29",
   "items": [
     {
       "id": "error-bars-for-evals",
@@ -253,6 +253,76 @@
       "venue": "UK AISI · docs",
       "links": [{ "label": "Docs", "url": "https://inspect.aisi.org.uk/" }],
       "added": "2026-09-28"
+    },
+    {
+      "id": "speculative-evaluation-stochastic-llms",
+      "tag": "Reliability",
+      "topics": ["multi-trial"],
+      "title": "Speculative Evaluation of Stochastic LLMs",
+      "summary": "Allocates a fixed rollout budget across benchmark tasks with a hierarchical Bayesian model of task-level success and Neyman allocation, cutting the variance of benchmark score estimates by roughly 13-34% versus sampling every task equally.",
+      "venue": "Shen et al. · arXiv 2026",
+      "links": [{ "label": "arXiv", "url": "https://arxiv.org/abs/2609.28560" }],
+      "added": "2026-09-29"
+    },
+    {
+      "id": "rank-confidence-sequences",
+      "tag": "Uncertainty",
+      "topics": ["uncertainty", "paired"],
+      "title": "Rank Confidence Sequences:Anytime-valid Leaderboards",
+      "summary": "Builds confidence sequences for each model's leaderboard rank using betting e-processes and closed testing across possible orderings, so a leaderboard can be checked after every new score without inflating the error rate, and individual models can stop early once their rank is settled.",
+      "venue": "Khosravi & Huo · arXiv 2026",
+      "links": [{ "label": "arXiv", "url": "https://arxiv.org/abs/2609.32211" }],
+      "added": "2026-09-29"
+    },
+    {
+      "id": "sharp-limits-honest-uncertainty",
+      "tag": "Uncertainty",
+      "topics": ["uncertainty", "multi-trial"],
+      "title": "Sharp Limits for Honest Uncertainty in Hard-Budget Repeated Evaluation",
+      "summary": "Derives the minimax-optimal confidence-interval width for repeated LLM evaluation under a fixed response budget, and shows a task-covering sampling design plus a joint mean/disagreement interval cuts median estimation error by 87% and interval width by 31% versus pooled uniform sampling on a 16-model LiveCodeBench replay.",
+      "venue": "Cheng et al. · arXiv 2026",
+      "links": [{ "label": "arXiv", "url": "https://arxiv.org/abs/2609.29140" }],
+      "added": "2026-09-29"
+    },
+    {
+      "id": "leaderboard-hidden-model-selection",
+      "tag": "Comparing Agents",
+      "topics": ["paired", "practice"],
+      "title": "How Sensitive Are LLM Leaderboard Claims to Hidden Model Selection?",
+      "summary": "Models unreported selection among hidden model variants with a Gaussian selection model and derives a sensitivity curve for how many hidden variants would erase a claimed leaderboard win; auditing 394 comparisons on the Open LLM Leaderboard, it finds 391 lack statistical support even before accounting for selection.",
+      "venue": "Yang & Chen · arXiv 2026",
+      "links": [{ "label": "arXiv", "url": "https://arxiv.org/abs/2609.28177" }],
+      "added": "2026-09-29"
+    },
+    {
+      "id": "identical-runs-different-results",
+      "tag": "Reliability",
+      "topics": ["multi-trial"],
+      "title": "Identical Runs, Different Results: Benchmarking AI Coding Agents on Open-Weight Models",
+      "summary": "Reruns six coding-agent/model pairings 52 times each (584 runs total) using a repeated-measures design and finds run-to-run variance within a single pairing exceeds the differences between pairings, arguing tens to over a hundred repeated runs are needed for a reliable agent comparison.",
+      "venue": "Ariño de la Rubia & Pafka · arXiv 2026",
+      "links": [{ "label": "arXiv", "url": "https://arxiv.org/abs/2609.33812" }],
+      "added": "2026-09-29"
+    },
+    {
+      "id": "artificial-societies-benchmark",
+      "tag": "Validity",
+      "topics": ["validity"],
+      "title": "Artificial Societies Benchmark: A Validation Framework for Synthetic Research",
+      "summary": "Introduces eleven tests of internal, construct, and external validity for LLMs used as synthetic survey respondents, and applies them to nine models against twenty human data sources, finding models compress response ranges and distort trait relationships even when they match average responses.",
+      "venue": "Chidichimo et al. · arXiv 2026",
+      "links": [{ "label": "arXiv", "url": "https://arxiv.org/abs/2609.30030" }],
+      "added": "2026-09-29"
+    },
+    {
+      "id": "vulnerability-score-protocol-effects",
+      "tag": "Validity",
+      "topics": ["validity", "paired"],
+      "title": "A Function-Level Vulnerability Score Measures Flag Rate More Than the Model: Protocol Effects on Paired Benchmarks",
+      "summary": "Holds model outputs fixed and varies only the scoring protocol (metric choice, verdict extraction, output budget) on a paired vulnerability-detection benchmark, showing function-level F1 tracks how often a model flags both functions in a pair (Spearman +0.86) far more than it tracks actual pair-level correctness (+0.16).",
+      "venue": "Cichoń & Dmitruk · arXiv 2026",
+      "links": [{ "label": "arXiv", "url": "https://arxiv.org/abs/2609.32890" }],
+      "added": "2026-09-29"
     }
   ]
 }
