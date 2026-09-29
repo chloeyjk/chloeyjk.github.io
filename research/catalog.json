@@ -1,0 +1,258 @@
+{
+  "updated": "2026-09-28",
+  "items": [
+    {
+      "id": "error-bars-for-evals",
+      "tag": "Uncertainty",
+      "topics": ["uncertainty"],
+      "title": "Adding Error Bars to Evals: A Statistical Approach to Language Model Evaluations",
+      "summary": "Treats eval questions as draws from an unseen population of questions. Recommends CLT standard errors, clustered standard errors when questions share context, paired-difference tests when comparing models, resampling answers to reduce variance, and power analysis before running an eval.",
+      "venue": "Evan Miller · arXiv 2024",
+      "links": [{ "label": "arXiv", "url": "https://arxiv.org/abs/2411.00640" }],
+      "added": "2026-09-28"
+    },
+    {
+      "id": "anthropic-statistical-approach-blog",
+      "tag": "In Practice",
+      "topics": ["uncertainty", "practice"],
+      "title": "A statistical approach to model evaluations",
+      "summary": "Anthropic's plain-language companion to the error-bars paper, with five concrete recommendations for how labs should report eval results.",
+      "venue": "Anthropic research blog · 2024",
+      "links": [{ "label": "Blog", "url": "https://www.anthropic.com/research/statistical-approach-to-model-evals" }],
+      "added": "2026-09-28"
+    },
+    {
+      "id": "quantifying-variance-benchmarks",
+      "tag": "Uncertainty",
+      "topics": ["uncertainty", "validity"],
+      "title": "Quantifying Variance in Evaluation Benchmarks",
+      "summary": "Measures how much benchmark scores move across random seeds and training runs, shows many reported differences sit inside that noise, and tests whether techniques such as item response theory reduce it.",
+      "venue": "Madaan et al. · arXiv 2024",
+      "links": [{ "label": "arXiv", "url": "https://arxiv.org/abs/2406.10229" }],
+      "added": "2026-09-28"
+    },
+    {
+      "id": "little-power",
+      "tag": "Uncertainty",
+      "topics": ["uncertainty", "paired"],
+      "title": "With Little Power Comes Great Responsibility",
+      "summary": "Brings power analysis to NLP evaluation and finds many common experimental setups are too small to reliably detect the size of improvements papers typically report.",
+      "venue": "Card et al. · EMNLP 2020",
+      "links": [{ "label": "arXiv", "url": "https://arxiv.org/abs/2010.06595" }],
+      "added": "2026-09-28"
+    },
+    {
+      "id": "hitchhikers-guide-significance",
+      "tag": "Comparing Agents",
+      "topics": ["paired"],
+      "title": "The Hitchhiker's Guide to Testing Statistical Significance in Natural Language Processing",
+      "summary": "A practical guide to choosing a significance test for comparing two systems on the same test set, plus a survey of how rarely published papers actually test.",
+      "venue": "Dror et al. · ACL 2018",
+      "links": [{ "label": "ACL Anthology", "url": "https://aclanthology.org/P18-1128/" }],
+      "added": "2026-09-28"
+    },
+    {
+      "id": "chatbot-arena",
+      "tag": "Comparing Agents",
+      "topics": ["paired", "judges"],
+      "title": "Chatbot Arena: An Open Platform for Evaluating LLMs by Human Preference",
+      "summary": "Ranks models from crowdsourced pairwise votes using a Bradley–Terry model with confidence intervals, and studies how reliable crowd preferences are.",
+      "venue": "Chiang et al. · arXiv 2024",
+      "links": [{ "label": "arXiv", "url": "https://arxiv.org/abs/2403.04132" }],
+      "added": "2026-09-28"
+    },
+    {
+      "id": "lmsys-elo-update",
+      "tag": "In Practice",
+      "topics": ["paired", "practice"],
+      "title": "Chatbot Arena: New models & Elo system update",
+      "summary": "LMSYS explains moving the leaderboard from online Elo updates to a Bradley–Terry fit with bootstrapped confidence intervals.",
+      "venue": "LMSYS blog · Dec 2023",
+      "links": [{ "label": "Blog", "url": "https://lmsys.org/blog/2023-12-07-leaderboard/" }],
+      "added": "2026-09-28"
+    },
+    {
+      "id": "ai-agents-that-matter",
+      "tag": "Comparing Agents",
+      "topics": ["paired", "validity"],
+      "title": "AI Agents That Matter",
+      "summary": "Argues agent evaluations should report cost and accuracy together (a Pareto frontier), and flags overfitting to benchmarks and poor reproducibility in current agent evals.",
+      "venue": "Kapoor et al. · arXiv 2024",
+      "links": [{ "label": "arXiv", "url": "https://arxiv.org/abs/2407.01502" }],
+      "added": "2026-09-28"
+    },
+    {
+      "id": "llm-as-a-judge-mt-bench",
+      "tag": "LLM Judges",
+      "topics": ["judges"],
+      "title": "Judging LLM-as-a-Judge with MT-Bench and Chatbot Arena",
+      "summary": "Measures how often strong LLM judges agree with human preferences, and documents judge biases such as position, verbosity, and self-enhancement.",
+      "venue": "Zheng et al. · NeurIPS 2023 Datasets & Benchmarks",
+      "links": [{ "label": "arXiv", "url": "https://arxiv.org/abs/2306.05685" }],
+      "added": "2026-09-28"
+    },
+    {
+      "id": "judging-the-judges",
+      "tag": "LLM Judges",
+      "topics": ["judges"],
+      "title": "Judging the Judges: Evaluating Alignment and Vulnerabilities in LLMs-as-Judges",
+      "summary": "Benchmarks many judge models against human annotators, compares agreement metrics, and probes where judges are easy to mislead.",
+      "venue": "Thakur et al. · arXiv 2024",
+      "links": [{ "label": "arXiv", "url": "https://arxiv.org/abs/2406.12624" }],
+      "added": "2026-09-28"
+    },
+    {
+      "id": "length-controlled-alpacaeval",
+      "tag": "LLM Judges",
+      "topics": ["judges"],
+      "title": "Length-Controlled AlpacaEval: A Simple Way to Debias Automatic Evaluators",
+      "summary": "Uses a regression adjustment to remove an automatic judge's preference for longer answers, a direct example of statistical debiasing of an evaluator.",
+      "venue": "Dubois et al. · arXiv 2024",
+      "links": [{ "label": "arXiv", "url": "https://arxiv.org/abs/2404.04475" }],
+      "added": "2026-09-28"
+    },
+    {
+      "id": "prediction-powered-inference",
+      "tag": "LLM Judges",
+      "topics": ["judges", "uncertainty"],
+      "title": "Prediction-Powered Inference",
+      "summary": "Builds valid confidence intervals by combining a small human-labeled set with many machine predictions, correcting for the predictor's bias.",
+      "venue": "Angelopoulos et al. · Science 2023",
+      "links": [{ "label": "arXiv", "url": "https://arxiv.org/abs/2301.09633" }],
+      "added": "2026-09-28"
+    },
+    {
+      "id": "autoeval-done-right",
+      "tag": "LLM Judges",
+      "topics": ["judges", "uncertainty"],
+      "title": "AutoEval Done Right: Using Synthetic Data for Model Evaluation",
+      "summary": "Applies prediction-powered inference to model evaluation: cheap model-generated labels plus a few human labels give unbiased, lower-variance accuracy estimates.",
+      "venue": "Boyeau et al. · arXiv 2024",
+      "links": [{ "label": "arXiv", "url": "https://arxiv.org/abs/2403.07008" }],
+      "added": "2026-09-28"
+    },
+    {
+      "id": "fix-benchmarking-nlu",
+      "tag": "Validity",
+      "topics": ["validity"],
+      "title": "What Will it Take to Fix Benchmarking in Natural Language Understanding?",
+      "summary": "Lays out criteria a benchmark should meet: validity, reliable annotation, enough statistical power, and not rewarding biased models.",
+      "venue": "Bowman & Dahl · NAACL 2021",
+      "links": [{ "label": "arXiv", "url": "https://arxiv.org/abs/2104.02145" }],
+      "added": "2026-09-28"
+    },
+    {
+      "id": "irt-leaderboards",
+      "tag": "Validity",
+      "topics": ["validity"],
+      "title": "Evaluation Examples are not Equally Informative: How should that change NLP Leaderboards?",
+      "summary": "Uses item response theory to model how difficult and how discriminating each test item is, and argues leaderboards should account for this.",
+      "venue": "Rodriguez et al. · ACL 2021",
+      "links": [{ "label": "ACL Anthology", "url": "https://aclanthology.org/2021.acl-long.346/" }],
+      "added": "2026-09-28"
+    },
+    {
+      "id": "tinybenchmarks",
+      "tag": "Validity",
+      "topics": ["validity", "uncertainty"],
+      "title": "tinyBenchmarks: evaluating LLMs with fewer examples",
+      "summary": "Uses item response theory to estimate full-benchmark performance from a small curated subset of items.",
+      "venue": "Polo et al. · ICML 2024",
+      "links": [{ "label": "arXiv", "url": "https://arxiv.org/abs/2402.14992" }],
+      "added": "2026-09-28"
+    },
+    {
+      "id": "helm",
+      "tag": "Validity",
+      "topics": ["validity"],
+      "title": "Holistic Evaluation of Language Models",
+      "summary": "Evaluates models across many scenarios and many metrics at once (accuracy, calibration, robustness, fairness, efficiency) instead of a single score.",
+      "venue": "Liang et al. · TMLR 2023",
+      "links": [{ "label": "arXiv", "url": "https://arxiv.org/abs/2211.09110" }],
+      "added": "2026-09-28"
+    },
+    {
+      "id": "codex-pass-at-k",
+      "tag": "Reliability",
+      "topics": ["multi-trial"],
+      "title": "Evaluating Large Language Models Trained on Code",
+      "summary": "Introduces HumanEval and the unbiased pass@k estimator: sample n ≥ k attempts, count c correct, and estimate 1 − C(n−c, k) / C(n, k).",
+      "venue": "Chen et al. · arXiv 2021",
+      "links": [{ "label": "arXiv", "url": "https://arxiv.org/abs/2107.03374" }],
+      "added": "2026-09-28"
+    },
+    {
+      "id": "tau-bench",
+      "tag": "Reliability",
+      "topics": ["multi-trial"],
+      "title": "τ-bench: A Benchmark for Tool-Agent-User Interaction in Real-World Domains",
+      "summary": "Agent benchmark with simulated users and tools. Introduces pass^k, the chance an agent succeeds on all k independent tries, and shows consistency drops sharply as k grows.",
+      "venue": "Yao et al. · arXiv 2024",
+      "links": [{ "label": "arXiv", "url": "https://arxiv.org/abs/2406.12045" }],
+      "added": "2026-09-28"
+    },
+    {
+      "id": "metr-time-horizon",
+      "tag": "Reliability",
+      "topics": ["multi-trial", "validity"],
+      "title": "Measuring AI Ability to Complete Long Software Tasks",
+      "summary": "Fits a logistic curve of agent success against how long each task takes a human, and summarizes each model by its 50% time horizon.",
+      "venue": "METR · arXiv 2025",
+      "links": [
+        { "label": "arXiv", "url": "https://arxiv.org/abs/2503.14499" },
+        { "label": "Blog", "url": "https://metr.org/blog/2025-03-19-measuring-ai-ability-to-complete-long-tasks/" }
+      ],
+      "added": "2026-09-28"
+    },
+    {
+      "id": "swe-bench",
+      "tag": "Agent Benchmarks",
+      "topics": ["validity"],
+      "title": "SWE-bench: Can Language Models Resolve Real-World GitHub Issues?",
+      "summary": "Agents must fix real GitHub issues, scored by running the repository's tests. A widely used agent benchmark and a good case study for test-based grading.",
+      "venue": "Jimenez et al. · ICLR 2024",
+      "links": [{ "label": "arXiv", "url": "https://arxiv.org/abs/2310.06770" }],
+      "added": "2026-09-28"
+    },
+    {
+      "id": "gaia",
+      "tag": "Agent Benchmarks",
+      "topics": ["validity"],
+      "title": "GAIA: a benchmark for General AI Assistants",
+      "summary": "Questions that are simple for people but need tool use, browsing, and multi-step reasoning, graded by exact match against a short answer.",
+      "venue": "Mialon et al. · arXiv 2023",
+      "links": [{ "label": "arXiv", "url": "https://arxiv.org/abs/2311.12983" }],
+      "added": "2026-09-28"
+    },
+    {
+      "id": "webarena",
+      "tag": "Agent Benchmarks",
+      "topics": ["validity"],
+      "title": "WebArena: A Realistic Web Environment for Building Autonomous Agents",
+      "summary": "Self-hosted websites where agents complete tasks, checked by programmatic validators of the final state.",
+      "venue": "Zhou et al. · arXiv 2023",
+      "links": [{ "label": "arXiv", "url": "https://arxiv.org/abs/2307.13854" }],
+      "added": "2026-09-28"
+    },
+    {
+      "id": "agentbench",
+      "tag": "Agent Benchmarks",
+      "topics": ["validity"],
+      "title": "AgentBench: Evaluating LLMs as Agents",
+      "summary": "Evaluates LLMs as agents across eight environments, including operating system, database, and web tasks.",
+      "venue": "Liu et al. · arXiv 2023",
+      "links": [{ "label": "arXiv", "url": "https://arxiv.org/abs/2308.03688" }],
+      "added": "2026-09-28"
+    },
+    {
+      "id": "inspect-framework",
+      "tag": "In Practice",
+      "topics": ["practice"],
+      "title": "Inspect: an open-source framework for LLM and agent evaluations",
+      "summary": "The UK AI Security Institute's eval framework. Useful for running your own agent evals with repeated epochs and built-in scorers.",
+      "venue": "UK AISI · docs",
+      "links": [{ "label": "Docs", "url": "https://inspect.aisi.org.uk/" }],
+      "added": "2026-09-28"
+    }
+  ]
+}

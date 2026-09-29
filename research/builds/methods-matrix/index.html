@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Which statistical method addresses which agent-evaluation problem, when to use it, and where to read more.">
+  <title>Methods Matrix — Chloe Yang</title>
+  <link rel="stylesheet" href="/assets/site.css">
+</head>
+<body>
+  <div class="shell">
+    <div class="page-head">
+      <p class="kicker">Builds · reference</p>
+      <h1>Methods Matrix</h1>
+      <p class="lede">Which statistical method answers which agent-evaluation question. Start from the problem you have, then read across.</p>
+    </div>
+
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr><th>Problem</th><th>Method</th><th>Use when</th><th>Watch out for</th><th>Read</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>How precise is this score?</td>
+            <td>CLT standard error, 95% CI</td>
+            <td>Always; roughly 30+ independent tasks</td>
+            <td>Too narrow when tasks are clustered</td>
+            <td><a href="https://arxiv.org/abs/2411.00640">Miller 2024</a></td>
+          </tr>
+          <tr>
+            <td>Tasks share a source (repo, document, website)</td>
+            <td>Cluster-robust SE; random-effects model</td>
+            <td>Several tasks come from the same unit</td>
+            <td>Few clusters make cluster SEs unstable</td>
+            <td><a href="https://arxiv.org/abs/2411.00640">Miller 2024</a></td>
+          </tr>
+          <tr>
+            <td>Is agent A better than agent B?</td>
+            <td>Paired difference (t-test, permutation, or bootstrap)</td>
+            <td>Both agents ran on the same tasks</td>
+            <td>Testing many agent pairs without correcting for multiple comparisons</td>
+            <td><a href="https://aclanthology.org/P18-1128/">Dror et al. 2018</a></td>
+          </tr>
+          <tr>
+            <td>Ranking many agents from head-to-head votes</td>
+            <td>Bradley–Terry model with bootstrap CIs</td>
+            <td>Only pairwise preferences are available</td>
+            <td>Rankings shift with which pairs were sampled</td>
+            <td><a href="https://arxiv.org/abs/2403.04132">Chiang et al. 2024</a></td>
+          </tr>
+          <tr>
+            <td>How big must the benchmark be?</td>
+            <td>Power analysis / sample-size formula</td>
+            <td>Before building or running an eval</td>
+            <td>Guessing the variance too optimistically</td>
+            <td><a href="https://arxiv.org/abs/2010.06595">Card et al. 2020</a></td>
+          </tr>
+          <tr>
+            <td>Can it succeed if allowed retries?</td>
+            <td>Unbiased pass@k estimator</td>
+            <td>n ≥ k trials per task</td>
+            <td>Rewards luck; hides inconsistency</td>
+            <td><a href="https://arxiv.org/abs/2107.03374">Chen et al. 2021</a></td>
+          </tr>
+          <tr>
+            <td>Does it succeed every time?</td>
+            <td>pass^k</td>
+            <td>Reliability matters (customer-facing agents)</td>
+            <td>Needs many trials per task to estimate well</td>
+            <td><a href="https://arxiv.org/abs/2406.12045">Yao et al. 2024</a></td>
+          </tr>
+          <tr>
+            <td>How much of the variance is the task vs. the run?</td>
+            <td>Hierarchical model (trials nested in tasks), ICC</td>
+            <td>Repeated trials per task</td>
+            <td>Binary outcomes need a GLMM, not a linear model</td>
+            <td><a href="https://arxiv.org/abs/2406.10229">Madaan et al. 2024</a></td>
+          </tr>
+          <tr>
+            <td>An LLM judge scores the outputs</td>
+            <td>Agreement vs. a human audit set (kappa, confusion matrix)</td>
+            <td>Any judge-scored metric</td>
+            <td>Raw percent agreement overstates quality when classes are imbalanced</td>
+            <td><a href="https://arxiv.org/abs/2406.12624">Thakur et al. 2024</a></td>
+          </tr>
+          <tr>
+            <td>Correcting a judge's bias in the headline score</td>
+            <td>Misclassification correction (Rogan–Gladen); prediction-powered inference</td>
+            <td>You have a small human-labeled subset</td>
+            <td>Judge error may differ between agents</td>
+            <td><a href="https://doi.org/10.1093/oxfordjournals.aje.a112510">Rogan & Gladen 1978</a>, <a href="https://arxiv.org/abs/2403.07008">Boyeau et al. 2024</a></td>
+          </tr>
+          <tr>
+            <td>Judge prefers longer answers</td>
+            <td>Regression adjustment for a confounder</td>
+            <td>A known nuisance variable drives scores</td>
+            <td>Adjusting for something that is actually part of quality</td>
+            <td><a href="https://arxiv.org/abs/2404.04475">Dubois et al. 2024</a></td>
+          </tr>
+          <tr>
+            <td>Items differ in difficulty and informativeness</td>
+            <td>Item response theory</td>
+            <td>Building, pruning, or shrinking a benchmark</td>
+            <td>Needs many agents to fit item parameters</td>
+            <td><a href="https://aclanthology.org/2021.acl-long.346/">Rodriguez et al. 2021</a>, <a href="https://arxiv.org/abs/2402.14992">Polo et al. 2024</a></td>
+          </tr>
+          <tr>
+            <td>Better accuracy at what price?</td>
+            <td>Cost–accuracy Pareto frontier</td>
+            <td>Comparing agents with different compute budgets</td>
+            <td>Token prices change over time</td>
+            <td><a href="https://arxiv.org/abs/2407.01502">Kapoor et al. 2024</a></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <footer class="site-foot">© Chloe Yang · Try the core calculations in <a href="/evalbench/">EvalBench</a>.</footer>
+  </div>
+  <script src="/assets/site-nav.js"></script>
+</body>
+</html>

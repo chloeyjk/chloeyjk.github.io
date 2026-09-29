@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Standard errors, clustering, and power for agent eval scores.">
+  <title>Uncertainty & Error Bars — Chloe Yang</title>
+  <link rel="stylesheet" href="/assets/site.css">
+</head>
+<body>
+  <div class="shell">
+    <div class="page-head">
+      <p class="kicker">Methods</p>
+      <h1>Uncertainty & Error Bars</h1>
+      <p class="lede">How much of a reported score is signal? Standard errors, clustered designs, and power.</p>
+      <p class="meta" data-updated></p>
+    </div>
+    <div class="card prose" style="margin-top:18px"><h3>Key idea</h3><p>Treat the eval set as a sample of n tasks from a larger population. The mean score has standard error s/√n, where s is the standard deviation of per-task scores. When tasks come in groups (several questions about the same document or repository), per-task scores are correlated and a cluster-robust standard error is needed, usually a wider one.</p></div>
+
+    <div data-entries="/research/catalog.json" data-topic="uncertainty"></div>
+    <footer class="site-foot">© Chloe Yang · Personal notes. The linked source is the authority.</footer>
+  </div>
+  <script src="/assets/site-nav.js"></script>
+  <script src="/assets/entries.js"></script>
+</body>
+</html>

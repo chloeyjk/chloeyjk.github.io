@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Reusable prompt and reporting templates for agent-evaluation research.">
+  <title>Templates — Chloe Yang</title>
+  <link rel="stylesheet" href="/assets/site.css">
+</head>
+<body>
+  <div class="shell">
+    <div class="page-head">
+      <p class="kicker">Reusable</p>
+      <h1>Templates</h1>
+      <p class="lede">Prompts and checklists I reuse. Copy them into Claude Code or any agent; they pair with the <a href="/research/harness/">Harness playbook</a>.</p>
+    </div>
+
+    <div class="prose">
+      <h2 id="weekly-scan">Weekly scan</h2>
+      <p>Finds candidates for the catalog. The agent returns a list and does not edit files.</p>
+      <pre>Find work from the past 7 days on evaluating AI agents or LLMs where the
+statistical method is a real contribution: uncertainty quantification,
+paired comparison, judge reliability, benchmark validity, or repeated-trial
+reliability.
+
+For each candidate, open its source page and report:
+- exact title, first author, date, and URL (arXiv abs / ACL Anthology / publisher)
+- one sentence: what statistical method it uses or proposes
+- one sentence: why it matters for agent evaluation
+- which topic fits: uncertainty | paired | judges | validity | multi-trial | practice
+
+Drop anything whose source page you did not open. Do not guess citations.
+Return at most 10, strongest first.</pre>
+
+      <h2 id="paper-read">Paper reading card</h2>
+      <p>Fill this in before writing a catalog summary.</p>
+      <pre>Paper:
+Estimand: what quantity is being estimated, over what population of tasks?
+Design: tasks × agents × trials? Paired? Clustered? Judge-scored?
+Uncertainty: how is it reported (SE, CI, bootstrap, none)?
+Assumptions: independence, exchangeability, judge accuracy, ...
+What would change my mind: the check or data that would undercut the result
+One-line summary for the catalog:</pre>
+
+      <h2 id="eval-report">Eval report checklist</h2>
+      <p>For writing up any agent eval of my own.</p>
+      <pre>[ ] Number of tasks, trials per task, and how tasks were sampled
+[ ] Score with 95% CI (clustered if tasks share a source)
+[ ] Comparisons are paired over the same tasks, with CI of the difference
+[ ] pass@k / pass^k reported with k and trials per task stated
+[ ] Judge-scored metrics: judge model, prompt, and agreement with a human audit set
+[ ] Cost (tokens or dollars) next to accuracy
+[ ] Power: smallest difference this design can detect
+[ ] Raw per-trial results released or archived</pre>
+
+      <h2 id="catalog-entry">Catalog entry</h2>
+      <p>Shape of one item in <code>research/catalog.json</code>.</p>
+      <pre>{
+  "id": "short-slug",
+  "tag": "Uncertainty",
+  "topics": ["uncertainty"],
+  "title": "Exact paper title",
+  "summary": "What it does, in my words.",
+  "venue": "First author et al. · Venue Year",
+  "links": [{ "label": "arXiv", "url": "https://arxiv.org/abs/XXXX.XXXXX" }],
+  "added": "YYYY-MM-DD"
+}</pre>
+    </div>
+
+    <footer class="site-foot">© Chloe Yang</footer>
+  </div>
+  <script src="/assets/site-nav.js"></script>
+</body>
+</html>

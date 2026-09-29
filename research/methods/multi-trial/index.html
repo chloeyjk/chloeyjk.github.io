@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="pass@k, pass^k, and repeated-trial designs for stochastic agents.">
+  <title>Multi-trial Reliability — Chloe Yang</title>
+  <link rel="stylesheet" href="/assets/site.css">
+</head>
+<body>
+  <div class="shell">
+    <div class="page-head">
+      <p class="kicker">Methods</p>
+      <h1>Multi-trial Reliability</h1>
+      <p class="lede">Agents are stochastic, so a single run per task hides a lot. pass@k, pass^k, and repeated measures.</p>
+      <p class="meta" data-updated></p>
+    </div>
+    <div class="card prose" style="margin-top:18px"><h3>Key idea</h3><p>Run each task n times and record c successes. pass@k = 1 − C(n−c, k)/C(n, k) estimates the chance at least one of k tries succeeds; pass^k = C(c, k)/C(n, k) estimates the chance all k succeed. Repeated trials form a hierarchical design with trials nested in tasks, so variance comes from both levels.</p></div>
+
+    <div data-entries="/research/catalog.json" data-topic="multi-trial"></div>
+    <footer class="site-foot">© Chloe Yang · Personal notes. The linked source is the authority.</footer>
+  </div>
+  <script src="/assets/site-nav.js"></script>
+  <script src="/assets/entries.js"></script>
+</body>
+</html>

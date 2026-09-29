@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="An illustrated study: why a 4-point gap between two agents on 100 tasks usually means nothing, and what to do about it.">
+  <title>Study: Is 62% Better Than 58%? — Chloe Yang</title>
+  <link rel="stylesheet" href="/assets/site.css">
+  <style>
+    .figure { margin: 18px 0; padding: 14px; border: 1px solid var(--line); border-radius: 8px; background: var(--surface); }
+    .figure svg { width: 100%; height: auto; display: block; }
+    .figure figcaption { font-size: 13px; color: var(--ink-soft); margin-top: 8px; }
+    .axis { stroke: var(--ink-soft); stroke-width: 1; }
+    .zero { stroke: var(--ink); stroke-width: 1.5; stroke-dasharray: 4 3; }
+    .ci-unpaired { stroke: var(--ink-soft); stroke-width: 6; stroke-linecap: round; }
+    .ci-paired { stroke: var(--accent); stroke-width: 6; stroke-linecap: round; }
+    .point { fill: var(--ink); }
+    .fig-label { fill: var(--ink); font-size: 13px; font-family: Arial, sans-serif; }
+    .fig-tick { fill: var(--ink-soft); font-size: 12px; font-family: Arial, sans-serif; }
+  </style>
+</head>
+<body>
+  <div class="shell">
+    <div class="page-head">
+      <p class="kicker">An illustrated study</p>
+      <h1>Is 62% better than 58%?</h1>
+      <p class="lede">A leaderboard shows Agent A at 62% and Agent B at 58% on a 100-task benchmark. This study walks through what a biostatistician would ask before believing the gap.</p>
+    </div>
+
+    <div class="prose">
+      <h2>1. A score is an estimate</h2>
+      <p>The 100 tasks are a sample of the tasks we actually care about. With pass/fail tasks at 62%, the per-task standard deviation is √(0.62 × 0.38) ≈ 0.485, so the standard error is 0.485 / √100 ≈ 4.9 points. The 95% interval for Agent A is <b>52.5% to 71.5%</b>, a 19-point-wide range around a single number on a leaderboard.</p>
+
+      <h2>2. Compare the difference, not two intervals</h2>
+      <p>If we treat the two scores as independent, the difference is 4 ± 13.6 points. But both agents ran on the <i>same</i> tasks, and hard tasks are hard for both. That shared difficulty is a positive correlation between their results. Assume it's 0.6, which is realistic for agents built on similar models.</p>
+      <p>The paired analysis works with per-task differences. Their standard deviation is √(σ²ₐ + σ²ᵦ − 2ρσₐσᵦ) ≈ 0.438, so the difference becomes 4 ± 8.6 points. That's much tighter, but <b>it still includes zero</b>.</p>
+
+      <figure class="figure">
+        <svg viewBox="0 0 640 170" role="img" aria-label="Two 95% intervals for the difference A minus B: unpaired from -9.6 to 17.6 points, paired from -4.6 to 12.6 points; both cross zero.">
+          <line class="axis" x1="40" y1="140" x2="600" y2="140"/>
+          <!-- x = 40 + (v + 20) * 14, for v in points from -20 to 20 -->
+          <text class="fig-tick" x="40" y="160" text-anchor="middle">−20</text>
+          <text class="fig-tick" x="180" y="160" text-anchor="middle">−10</text>
+          <text class="fig-tick" x="320" y="160" text-anchor="middle">0</text>
+          <text class="fig-tick" x="460" y="160" text-anchor="middle">+10</text>
+          <text class="fig-tick" x="600" y="160" text-anchor="middle">+20</text>
+          <line class="zero" x1="320" y1="20" x2="320" y2="140"/>
+          <text class="fig-label" x="40" y="45">Unpaired</text>
+          <line class="ci-unpaired" x1="185.6" y1="60" x2="566.4" y2="60"/>
+          <circle class="point" cx="376" cy="60" r="6"/>
+          <text class="fig-label" x="40" y="95">Paired</text>
+          <line class="ci-paired" x1="255.6" y1="110" x2="496.4" y2="110"/>
+          <circle class="point" cx="376" cy="110" r="6"/>
+        </svg>
+        <figcaption>95% intervals for A − B in percentage points (100 tasks, correlation 0.6). Pairing narrows the interval by about a third, but both cross zero.</figcaption>
+      </figure>
+
+      <h2>3. How many tasks would it take?</h2>
+      <p>To detect a true 4-point gap with 80% power at the 5% level, a paired design needs about <b>941 tasks</b>; an unpaired one needs about 2,351. Most agent benchmarks have a few hundred tasks. <a href="https://arxiv.org/abs/2010.06595">Card et al. (2020)</a> found the same underpowering in NLP.</p>
+
+      <h2>4. Three things that change the answer</h2>
+      <ul>
+        <li><b>Clustering.</b> If tasks come in groups (ten tasks from one repository), they aren't 100 independent draws. Clustered standard errors are wider. See <a href="/research/methods/uncertainty/">Uncertainty</a>.</li>
+        <li><b>Repeated trials.</b> Agents are stochastic. Running each task several times shrinks the within-task noise, and shows whether an agent is reliably right (pass^k) or occasionally right (pass@k). See <a href="/research/methods/multi-trial/">Multi-trial Reliability</a>.</li>
+        <li><b>Judge error.</b> If an LLM judge scores the tasks, its mistakes are measurement error, and they can be biased toward one agent. See <a href="/research/methods/judges/">LLM Judges</a>.</li>
+      </ul>
+
+      <h2>5. Try it</h2>
+      <p>Paste your own per-task results into <a href="/evalbench/">EvalBench</a> to get these intervals, pass@k, pass^k, and a sample-size estimate.</p>
+
+      <p class="meta">Worked numbers: n = 100, p̂ₐ = 0.62, p̂ᵦ = 0.58, ρ = 0.6 (assumed), z(0.975) = 1.960, z(0.8) = 0.842. Framework follows <a href="https://arxiv.org/abs/2411.00640">Miller (2024)</a>.</p>
+    </div>
+
+    <footer class="site-foot">© Chloe Yang</footer>
+  </div>
+  <script src="/assets/site-nav.js"></script>
+</body>
+</html>

@@ -1,0 +1,26 @@
+{
+  "updated": "2026-09-28",
+  "items": [
+    {
+      "id": "verify-citations-against-source",
+      "tag": "Verification",
+      "title": "Check every citation against its source before it goes in the catalog",
+      "summary": "Confirm the title and date from the paper's arXiv abstract page (the citation_title and citation_date meta tags) or the ACL Anthology page. The arXiv API rate-limits bursts (HTTP 429), so fall back to the abstract pages when checking many at once. Never publish a citation an agent wrote from memory.",
+      "added": "2026-09-28"
+    },
+    {
+      "id": "edit-data-not-html",
+      "tag": "Workflow",
+      "title": "Edit data, not pages",
+      "summary": "Every list on the hub renders from JSON: research/catalog.json for papers (use the topics field to place an entry on Methods pages) and research/lab/entries.json for tips. Adding an entry never requires touching HTML.",
+      "added": "2026-09-28"
+    },
+    {
+      "id": "log-trials-not-averages",
+      "tag": "Eval design",
+      "title": "Log every trial, not just the averaged score",
+      "summary": "Store successes and attempts per task (and per trial if you can). Averages cannot be turned back into pass@k, pass^k, clustered standard errors, or paired comparisons; raw trial counts can. EvalBench takes exactly this format.",
+      "added": "2026-09-28"
+    }
+  ]
+}
