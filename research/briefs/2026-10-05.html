@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Weekly brief for the week of 2026-10-05: new work on agent evaluation and statistical methods.">
+  <title>Brief 2026-10-05 — Chloe Yang</title>
+  <link rel="stylesheet" href="/assets/site.css">
+</head>
+<body>
+  <div class="shell">
+    <div class="page-head">
+      <p class="kicker">Weekly brief · 2026-10-05</p>
+      <h1>Decomposing leaderboard variance, and when LLM judges rank right but measure wrong</h1>
+      <p class="lede">Four new papers this week, two of them digging into the same crack: an LLM judge (or an agent leaderboard) can get the relative order right while still being badly wrong about the underlying scale.</p>
+      <p class="meta"><a href="/research/briefs/">← All briefs</a> · Covers 2026-09-29 to 2026-10-05</p>
+    </div>
+
+    <div class="prose">
+      <h2>New this week</h2>
+      <article class="entry">
+        <div class="entry-meta"><span class="pill">Uncertainty</span></div>
+        <p class="entry-title"><a href="/research/#agent-leaderboard-reliability">Agent Evaluation Reliability: More Tasks Won't (Always) Fix An Agent Leaderboard</a></p>
+        <p class="entry-summary"><b>Method:</b> A Bayesian variance-decomposition model applied to 22 agent benchmarks, splitting leaderboard rank variation into contributions from the underlying model, the scaffold, and task design.</p>
+        <p class="entry-summary"><b>Why it matters:</b> Reliability for a fixed model-scaffold pairing is high (0.94-0.99), but reliability of the underlying model alone is often much lower (0.15-0.84); pooling diverse benchmarks helps more than just adding tasks, raising reliability from 0.44 to 0.75 at up to 83% lower cost.</p>
+        <span class="entry-venue">Hardy et al. · arXiv 2026</span>
+        <span class="entry-links"><a href="https://arxiv.org/abs/2610.00651">[Source]</a></span>
+      </article>
+      <article class="entry">
+        <div class="entry-meta"><span class="pill">LLM Judges</span></div>
+        <p class="entry-title"><a href="/research/#occupational-judge-audit">Right Order, Wrong Scale: Auditing LLM Judges for Occupational AI Measurement</a></p>
+        <p class="entry-summary"><b>Method:</b> Cross-validated calibration and prediction-assisted estimation, applied to 33 LLM-judge configurations audited against 45,796 human worker ratings.</p>
+        <p class="entry-summary"><b>Why it matters:</b> Judges largely agree on how to rank responses, but their estimated acceptance rates range from 3% to 98% against a 61% human consensus — rank agreement does not guarantee valid aggregate measurement.</p>
+        <span class="entry-venue">Lyu & Thompson · arXiv 2026</span>
+        <span class="entry-links"><a href="https://arxiv.org/abs/2610.02492">[Source]</a></span>
+      </article>
+      <article class="entry">
+        <div class="entry-meta"><span class="pill">LLM Judges</span></div>
+        <p class="entry-title"><a href="/research/#pair-difficulty-matters">Pair Difficulty Matters: Rethinking Pairwise LLM-as-a-Judge Evaluation and Consistency</a></p>
+        <p class="entry-summary"><b>Method:</b> Bradley-Terry pairwise-aggregation geometry, controlled simulation, and two human-rated corpora, used to show standard judge proxies are dominated by hard-to-call near-tied pairs.</p>
+        <p class="entry-summary"><b>Why it matters:</b> Position bias, transitivity, and pairwise agreement correlate only weakly with ranking accuracy against gold; the paper proposes rank-gap-conditional metrics that weight the pairs that actually carry signal.</p>
+        <span class="entry-venue">Brocai & Becker · arXiv 2026</span>
+        <span class="entry-links"><a href="https://arxiv.org/abs/2609.37577">[Source]</a></span>
+      </article>
+      <article class="entry">
+        <div class="entry-meta"><span class="pill">Validity</span></div>
+        <p class="entry-title"><a href="/research/#qc-stark">QC-Stark: A Multi-Task Benchmark Revealing Capability Dissociations in LLMs Evaluated on Quantum Computing Tasks</a></p>
+        <p class="entry-summary"><b>Method:</b> A 2-parameter item response theory model fit to 10 LLMs across 11 execution-graded quantum-computing tasks, used to check the benchmark's own measurement quality.</p>
+        <p class="entry-summary"><b>Why it matters:</b> Overall rankings mask substantial per-task variation: on 4 of 11 tasks, task-specific rank correlates with overall rank at a level not statistically distinguishable from chance.</p>
+        <span class="entry-venue">Gupta · arXiv 2026</span>
+        <span class="entry-links"><a href="https://arxiv.org/abs/2609.35581">[Source]</a></span>
+      </article>
+
+      <h2>Considered, not added</h2>
+      <ul>
+        <li>Optimal Design for Active Preference Learning with Biased LLM Judges (arXiv 2609.38860): a judge-bias-aware acquisition method for active preference learning — the contribution is to alignment training, not to evaluation methodology.</li>
+        <li>Prediction-powered Neural Architecture Search (arXiv 2610.01317): applies prediction-powered inference, but to neural architecture search rather than evaluating LLMs or agents.</li>
+        <li>Mathematical Transfer in LLMs Follows Reasoning Approach More Than Topic (arXiv 2610.00331): rigorous counterbalanced design and confidence intervals, but it's a transfer-learning study, not an evaluation-methods contribution.</li>
+        <li>Measuring Collapse and Correction in Homogeneous-Panel LLM Debate (arXiv 2609.35279): uses correlation tests and p-values as supporting analysis of multi-agent debate dynamics, but statistics aren't the paper's evaluation-methods contribution.</li>
+        <li>Open-Endedness Bench: Measuring Epistemic Process from Agent Records (arXiv 2610.02588): a graph-based, qualitative verification approach for agent research logs — no statistical method.</li>
+      </ul>
+    </div>
+
+    <footer class="site-foot">© Chloe Yang · Drafted by an agent, reviewed before publishing. The linked source is the authority.</footer>
+  </div>
+  <script src="/assets/site-nav.js"></script>
+</body>
+</html>

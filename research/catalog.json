@@ -1,5 +1,5 @@
 {
-  "updated": "2026-09-29",
+  "updated": "2026-10-05",
   "items": [
     {
       "id": "error-bars-for-evals",
@@ -323,6 +323,46 @@
       "venue": "Cichoń & Dmitruk · arXiv 2026",
       "links": [{ "label": "arXiv", "url": "https://arxiv.org/abs/2609.32890" }],
       "added": "2026-09-29"
+    },
+    {
+      "id": "agent-leaderboard-reliability",
+      "tag": "Uncertainty",
+      "topics": ["uncertainty", "validity"],
+      "title": "Agent Evaluation Reliability: More Tasks Won't (Always) Fix An Agent Leaderboard",
+      "summary": "Fits a Bayesian variance-decomposition model to 22 agent benchmarks from the Holistic Agent Leaderboard and Harbor Index, splitting leaderboard rank variation into contributions from the underlying model, the scaffold, and task design. Reliability for a fixed model-scaffold pairing is high (0.94-0.99), but reliability of the underlying model alone is much lower (0.15-0.84); pooling diverse benchmarks raises that to 0.75 at up to 83% lower cost, while just adding more tasks often does not help.",
+      "venue": "Hardy et al. · arXiv 2026",
+      "links": [{ "label": "arXiv", "url": "https://arxiv.org/abs/2610.00651" }],
+      "added": "2026-10-05"
+    },
+    {
+      "id": "occupational-judge-audit",
+      "tag": "LLM Judges",
+      "topics": ["judges", "validity"],
+      "title": "Right Order, Wrong Scale: Auditing LLM Judges for Occupational AI Measurement",
+      "summary": "Audits 33 LLM-judge configurations against 45,796 human worker ratings (O*NET-BENCH) using cross-validated calibration and prediction-assisted estimation. Judges largely agree on how to rank responses, but their estimated acceptance rates range from 3% to 98% against a 61% human consensus, showing that rank agreement does not guarantee valid aggregate measurement.",
+      "venue": "Lyu & Thompson · arXiv 2026",
+      "links": [{ "label": "arXiv", "url": "https://arxiv.org/abs/2610.02492" }],
+      "added": "2026-10-05"
+    },
+    {
+      "id": "pair-difficulty-matters",
+      "tag": "LLM Judges",
+      "topics": ["judges", "paired"],
+      "title": "Pair Difficulty Matters: Rethinking Pairwise LLM-as-a-Judge Evaluation and Consistency",
+      "summary": "Using Bradley-Terry pairwise-aggregation geometry, controlled simulation, and two human-rated corpora, shows that standard LLM-judge proxies (position bias, transitivity, pairwise agreement) are dominated by hard-to-call near-tied pairs and correlate only weakly with ranking accuracy against gold rankings. Proposes rank-gap-conditional metrics that instead weight the pairs that actually carry ranking signal.",
+      "venue": "Brocai & Becker · arXiv 2026",
+      "links": [{ "label": "arXiv", "url": "https://arxiv.org/abs/2609.37577" }],
+      "added": "2026-10-05"
+    },
+    {
+      "id": "qc-stark",
+      "tag": "Validity",
+      "topics": ["validity"],
+      "title": "QC-Stark: A Multi-Task Benchmark Revealing Capability Dissociations in LLMs Evaluated on Quantum Computing Tasks",
+      "summary": "Benchmarks 10 LLMs on 11 quantum-computing tasks with execution-based grading, then fits a 2-parameter item response theory model to check the benchmark's measurement quality. Finds overall rankings mask substantial per-task variation: on 4 of 11 tasks, task-specific rank correlates with overall rank at a level not statistically distinguishable from chance.",
+      "venue": "Gupta · arXiv 2026",
+      "links": [{ "label": "arXiv", "url": "https://arxiv.org/abs/2609.35581" }],
+      "added": "2026-10-05"
     }
   ]
 }

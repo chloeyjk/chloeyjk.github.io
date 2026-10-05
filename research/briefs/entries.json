@@ -1,5 +1,5 @@
 {
-  "updated": "2026-09-29",
+  "updated": "2026-10-05",
   "items": [
     {
       "id": "brief-2026-09-29",
@@ -8,6 +8,14 @@
       "summary": "7 new entries, 0 updates. The strongest is a minimax-optimal confidence-interval bound for repeated LLM evaluation under a fixed response budget, verified on a 16-model LiveCodeBench replay.",
       "links": [{ "label": "Read brief", "url": "/research/briefs/2026-09-29.html" }],
       "added": "2026-09-29"
+    },
+    {
+      "id": "brief-2026-10-05",
+      "tag": "Weekly",
+      "title": "Week of 2026-10-05: decomposing leaderboard variance, and when judges rank right but measure wrong",
+      "summary": "4 new entries, 0 updates. The strongest decomposes agent-leaderboard variance into model, scaffold, and task-design components with a Bayesian model, finding that pooling benchmarks helps reliability more than adding tasks.",
+      "links": [{ "label": "Read brief", "url": "/research/briefs/2026-10-05.html" }],
+      "added": "2026-10-05"
     }
   ]
 }
