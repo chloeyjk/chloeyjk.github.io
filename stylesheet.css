@@ -118,8 +118,9 @@ h1 {
   letter-spacing: -.045em;
   line-height: 1.02;
 }
-.lede { max-width: 720px; font-size: clamp(19px, 2.1vw, 23px); line-height: 1.5; }
-.background { max-width: 690px; color: var(--muted); }
+/* Both intro paragraphs share one style */
+.lede, .background { max-width: 690px; color: var(--muted); font-size: 18px; line-height: 1.65; }
+.lede { margin-bottom: 14px; }
 .links { display: flex; flex-wrap: wrap; gap: 10px 22px; margin-top: 30px; }
 .links a { color: var(--accent); font-size: 14px; font-weight: 700; text-decoration: none; }
 .portrait-wrap { margin: 0; }
