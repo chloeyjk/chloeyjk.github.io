@@ -128,8 +128,8 @@ h1 {
   width: 100%;
   aspect-ratio: 4 / 5;
   object-fit: cover;
-  object-position: center 30%;
-  border-radius: 50% 50% 22px 22px;
+  object-position: center;
+  border-radius: 14px;
   box-shadow: 12px 12px 0 var(--wash);
 }
 .projects { padding: 104px 0; border-top: 1px solid var(--line); }
