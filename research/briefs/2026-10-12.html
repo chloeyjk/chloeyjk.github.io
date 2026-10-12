@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Weekly brief for the week of 2026-10-12: new work on agent evaluation and statistical methods.">
+  <title>Brief 2026-10-12 — Chloe Yang</title>
+  <link rel="stylesheet" href="/assets/site.css">
+</head>
+<body>
+  <div class="shell">
+    <div class="page-head">
+      <p class="kicker">Weekly brief · 2026-10-12</p>
+      <h1>Anytime-valid leaderboard security, and a statistical recheck of METR's time horizons</h1>
+      <p class="lede">5 new entries, 0 updates. The strongest extends anytime-valid leaderboard testing to adversarial rigging, and a close second refits METR's time-horizon curve with splines and item response theory instead of assuming linear difficulty in log task-time.</p>
+      <p class="meta"><a href="/research/briefs/">← All briefs</a> · Covers 2026-10-05 to 2026-10-12</p>
+    </div>
+
+    <div class="prose">
+      <h2>New this week</h2>
+      <article class="entry">
+        <div class="entry-meta"><span class="pill">Uncertainty</span></div>
+        <p class="entry-title"><a href="/research/#certified-corruption-budgets">Certified Corruption Budgets: Anytime-Valid Leaderboard Claims under Adaptive Rigging</a></p>
+        <p class="entry-summary"><b>Method:</b> Betting-style e-processes publish, after every new vote, a certified bound on how many corrupted or rigged records a ranking claim can tolerate, valid at all times at once under continuous monitoring.</p>
+        <p class="entry-summary"><b>Why it matters:</b> On a replay of 1.8 million Chatbot Arena votes, a few hundred rigged votes are enough to fool standard confidence intervals into certifying a false ordering, while the certified bound still holds.</p>
+        <span class="entry-venue">Khosravi & Huo · arXiv 2026</span>
+        <span class="entry-links"><a href="https://arxiv.org/abs/2610.10597">[Source]</a></span>
+      </article>
+
+      <article class="entry">
+        <div class="entry-meta"><span class="pill">Validity</span></div>
+        <p class="entry-title"><a href="/research/#ai-time-horizons-reestimated">On the estimation and validity of AI time horizons---a statistical look at the METR plot</a></p>
+        <p class="entry-summary"><b>Method:</b> Refits the 50%-time-horizon curve with splines and item response theory instead of assuming AI difficulty is linear in log human-completion-time, and checks construct validity with cross-validated proper scoring rules.</p>
+        <p class="entry-summary"><b>Why it matters:</b> The fitted difficulty curve is nearly flat for short tasks and steep for long ones, so a jump from 3 to 30 minutes is much easier for an AI than 30 minutes to 5 hours, even though both are 10x increases.</p>
+        <span class="entry-venue">Nguyen & Fithian · arXiv 2026</span>
+        <span class="entry-links"><a href="https://arxiv.org/abs/2610.12466">[Source]</a></span>
+      </article>
+
+      <article class="entry">
+        <div class="entry-meta"><span class="pill">LLM Judges</span></div>
+        <p class="entry-title"><a href="/research/#trustworthy-verdict-rate">All Verdicts are Not Equal: Rethinking LLM Judge Reliability</a></p>
+        <p class="entry-summary"><b>Method:</b> Ten repeats per condition across six judge models, four benchmarks, five prompt formats, two presentation orders, and three sampling temperatures, feeding a "trustworthy verdict rate" requiring reproducible, order-invariant, and accurate judgments.</p>
+        <p class="entry-summary"><b>Why it matters:</b> The metric yields a theoretical bound on how much position bias alone can limit judge accuracy, and compares pairwise win-rate evaluation with holistic rubric scoring.</p>
+        <span class="entry-venue">Kumar et al. · arXiv 2026</span>
+        <span class="entry-links"><a href="https://arxiv.org/abs/2610.12083">[Source]</a></span>
+      </article>
+
+      <article class="entry">
+        <div class="entry-meta"><span class="pill">Validity</span></div>
+        <p class="entry-title"><a href="/research/#harmful-refusal-psychometric-audit">Searching for "Harmful Refusal": A Psychometric Audit of an AI Safety Benchmark</a></p>
+        <p class="entry-summary"><b>Method:</b> Multidimensional item response theory plus differential item functioning analysis, applied to HarmBench after finding three of four candidate HELM Safety datasets are saturated.</p>
+        <p class="entry-summary"><b>Why it matters:</b> "Harmful refusal" does not behave as one coherent attribute, and cross-developer scoring gaps mostly disappear once comparisons are matched on item scope, warning against treating aggregate safety scores as a single valid measurement.</p>
+        <span class="entry-venue">Stewart et al. · arXiv 2026</span>
+        <span class="entry-links"><a href="https://arxiv.org/abs/2610.12409">[Source]</a></span>
+      </article>
+
+      <article class="entry">
+        <div class="entry-meta"><span class="pill">Reliability</span></div>
+        <p class="entry-title"><a href="/research/#pass-at-k-diversity-blind-spot">What pass@k Cannot Measure: Evaluating Diversity and Capability Retention after Post-Training</a></p>
+        <p class="entry-summary"><b>Method:</b> Controlled comparisons of GRPO versus rejection-sampling fine-tuning, with token-level entropy, answer-level entropy, and unique-answers-per-prompt as diversity metrics alongside pass@k.</p>
+        <p class="entry-summary"><b>Why it matters:</b> pass@k depends only on each problem's marginal success probability and shows no consistent capability winner even when the two training methods move diversity in opposite directions, so it can certify a property it does not measure.</p>
+        <span class="entry-venue">Rath et al. · arXiv 2026</span>
+        <span class="entry-links"><a href="https://arxiv.org/abs/2610.07405">[Source]</a></span>
+      </article>
+
+      <h2>Considered, not added</h2>
+      <ul>
+        <li>Reflective Prompt Optimization of a Deep-Research Agent (arXiv 2610.12601): primarily a prompt-optimization method; its multi-seed/bootstrap evaluation protocol is in service of the optimization claim rather than a proposed general evaluation method.</li>
+        <li>Cluster-Robust Prediction-Powered Inference (arXiv 2610.09601): extends PPI++ to clustered data with closed-form confidence intervals, but the abstract names no LLM or agent evaluation application.</li>
+        <li>Covariate-dependent Joint Modeling of Multivariate Ordinal Preferences (arXiv 2610.09070): a general ordinal-preference statistics method; LLM alignment data (HelpSteer) is only a motivating example, with no LLM evaluation experiments described.</li>
+        <li>U-Space: Uncovering When and Why Uncertainty Arises in Language Models (arXiv 2610.09087): a representation-engineering / mechanistic-interpretability method for token-level uncertainty, not a statistical-inference contribution.</li>
+        <li>Valid Stopping in Adaptive Generator-Verifier Loops (arXiv 2610.06432): a sequential-testing / false-discovery-rate-control method for generate-verify loops, validated on synthetic data and a protein-design benchmark rather than LLM or agent benchmarks.</li>
+        <li>UK AISI, "Transect: Making large-scale agentic evaluations easier to understand" (blog, 7 Oct 2026): a transcript-review tool for agentic evals; no statistical method (confidence intervals, variance, sampling) is described.</li>
+      </ul>
+    </div>
+
+    <footer class="site-foot">© Chloe Yang · Drafted by an agent, reviewed before publishing. The linked source is the authority.</footer>
+  </div>
+  <script src="/assets/site-nav.js"></script>
+</body>
+</html>

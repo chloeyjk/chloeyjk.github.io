@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-05",
+  "updated": "2026-10-12",
   "items": [
     {
       "id": "error-bars-for-evals",
@@ -363,6 +363,56 @@
       "venue": "Gupta · arXiv 2026",
       "links": [{ "label": "arXiv", "url": "https://arxiv.org/abs/2609.35581" }],
       "added": "2026-10-05"
+    },
+    {
+      "id": "certified-corruption-budgets",
+      "tag": "Uncertainty",
+      "topics": ["uncertainty", "paired"],
+      "title": "Certified Corruption Budgets: Anytime-Valid Leaderboard Claims under Adaptive Rigging",
+      "summary": "Extends anytime-valid leaderboard testing to adversarial settings: using betting-style e-processes, it publishes after every new vote a certified bound on how many corrupted or rigged records a ranking claim can tolerate. On a replay of 1.8 million Chatbot Arena votes, a few hundred rigged votes are enough to fool standard confidence intervals into certifying a false ordering, while the certified bound still holds.",
+      "venue": "Khosravi & Huo · arXiv 2026",
+      "links": [{ "label": "arXiv", "url": "https://arxiv.org/abs/2610.10597" }],
+      "added": "2026-10-12"
+    },
+    {
+      "id": "ai-time-horizons-reestimated",
+      "tag": "Validity",
+      "topics": ["validity", "uncertainty"],
+      "title": "On the estimation and validity of AI time horizons---a statistical look at the METR plot",
+      "summary": "Refits METR's 50%-time-horizon curve with splines and item response theory instead of assuming AI difficulty is linear in log human-completion-time, finding the fitted difficulty curve is nearly flat for short tasks and steep for long ones; scores better under cross-validated proper scoring rules and recommends diagnostic plots for checking whether time horizon is a valid construct.",
+      "venue": "Nguyen & Fithian · arXiv 2026",
+      "links": [{ "label": "arXiv", "url": "https://arxiv.org/abs/2610.12466" }],
+      "added": "2026-10-12"
+    },
+    {
+      "id": "trustworthy-verdict-rate",
+      "tag": "LLM Judges",
+      "topics": ["judges", "multi-trial"],
+      "title": "All Verdicts are Not Equal: Rethinking LLM Judge Reliability",
+      "summary": "Tests six judge models across four benchmarks, five prompt formats, two presentation orders, and three sampling temperatures with ten repeats per condition, introducing a \"trustworthy verdict rate\" that requires a judgment to be simultaneously reproducible, order-invariant, and accurate, and derives a theoretical bound on how much position bias alone can limit judge accuracy.",
+      "venue": "Kumar et al. · arXiv 2026",
+      "links": [{ "label": "arXiv", "url": "https://arxiv.org/abs/2610.12083" }],
+      "added": "2026-10-12"
+    },
+    {
+      "id": "harmful-refusal-psychometric-audit",
+      "tag": "Validity",
+      "topics": ["validity"],
+      "title": "Searching for \"Harmful Refusal\": A Psychometric Audit of an AI Safety Benchmark",
+      "summary": "Applies multidimensional item response theory and differential item functioning to HarmBench within HELM Safety, finding the \"harmful refusal\" score does not behave as one coherent attribute, and that cross-developer scoring gaps mostly disappear once comparisons are matched on item scope.",
+      "venue": "Stewart et al. · arXiv 2026",
+      "links": [{ "label": "arXiv", "url": "https://arxiv.org/abs/2610.12409" }],
+      "added": "2026-10-12"
+    },
+    {
+      "id": "pass-at-k-diversity-blind-spot",
+      "tag": "Reliability",
+      "topics": ["multi-trial"],
+      "title": "What pass@k Cannot Measure: Evaluating Diversity and Capability Retention after Post-Training",
+      "summary": "Shows pass@k depends only on each problem's marginal success probability and is blind to how correct and incorrect outputs are distributed, using controlled comparisons of GRPO versus rejection-sampling fine-tuning where pass@k shows no consistent winner even as token- and answer-level diversity move in opposite directions.",
+      "venue": "Rath et al. · arXiv 2026",
+      "links": [{ "label": "arXiv", "url": "https://arxiv.org/abs/2610.07405" }],
+      "added": "2026-10-12"
     }
   ]
 }
