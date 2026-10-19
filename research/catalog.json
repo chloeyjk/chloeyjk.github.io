@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-12",
+  "updated": "2026-10-19",
   "items": [
     {
       "id": "error-bars-for-evals",
@@ -413,6 +413,66 @@
       "venue": "Rath et al. · arXiv 2026",
       "links": [{ "label": "arXiv", "url": "https://arxiv.org/abs/2610.07405" }],
       "added": "2026-10-12"
+    },
+    {
+      "id": "callm-judge-multicalibration",
+      "tag": "LLM Judges",
+      "topics": ["judges"],
+      "title": "A CaLLM Judge is a Better Judge: Mitigating Bias in LLM-as-a-judge",
+      "summary": "Treats each known LLM-judge bias (position, verbosity, model family) as miscalibration on an identifiable group and applies multicalibration to bound bias across many groups at once, including ones not specified in advance, proving conditions under which this improves the judge's accuracy rather than trading it off against calibration; reduces multicalibration error and improves accuracy on pairwise preference benchmarks.",
+      "venue": "Barbera et al. · arXiv 2026",
+      "links": [{ "label": "arXiv", "url": "https://arxiv.org/abs/2610.18108" }],
+      "added": "2026-10-19"
+    },
+    {
+      "id": "statistical-assurance-limits-adversarial",
+      "tag": "Uncertainty",
+      "topics": ["uncertainty", "validity"],
+      "title": "Limits of Statistical Assurance for Embodied and Agentic AI under Adaptive Adversaries",
+      "summary": "Derives a closed-form bound on expected post-certification safety violations from an adversary that behaves normally until a statistical safety test certifies it, then validates the bound in simulated robot-collaboration and preregistered randomized AgentDojo trials; shows a mixture likelihood-ratio monitor with revocation keeps cumulative excess bounded, cutting violations from 12.00 to 3.81 per 24 assigned task opportunities.",
+      "venue": "Singh · arXiv 2026",
+      "links": [{ "label": "arXiv", "url": "https://arxiv.org/abs/2610.18948" }],
+      "added": "2026-10-19"
+    },
+    {
+      "id": "benchmark-saturation-transcripts",
+      "tag": "Validity",
+      "topics": ["validity"],
+      "title": "Evaluating Model Capabilities After Benchmark Saturation",
+      "summary": "Simulates benchmark saturation retrospectively using historical benchmark and model releases, then tests whether protocols applied to saturated benchmarks' solved transcripts can predict capability on held-out, unsaturated items; pairwise LLM judging of transcripts cuts prediction error 5.3x versus a baseline using only saturated scores, though the signal does not always generalize across distribution shifts.",
+      "venue": "Hamada et al. · arXiv 2026",
+      "links": [{ "label": "arXiv", "url": "https://arxiv.org/abs/2610.20667" }],
+      "added": "2026-10-19"
+    },
+    {
+      "id": "probabilitybench",
+      "tag": "Validity",
+      "topics": ["validity", "uncertainty"],
+      "title": "ProbabilityBench: Model Evaluation and Calibration with Exact Ground-Truth Uncertainty",
+      "summary": "Builds simulated text-based domains with analytically exact conditional class probabilities, so reported model probabilities can be scored directly against ground truth via KL divergence instead of the usual single-observed-label proxy; also serves as a meta-evaluation framework, using the known ground truth to benchmark the accuracy of standard calibration metrics and Bayes-error estimators themselves.",
+      "venue": "Dai et al. · arXiv 2026",
+      "links": [{ "label": "arXiv", "url": "https://arxiv.org/abs/2610.17016" }],
+      "added": "2026-10-19"
+    },
+    {
+      "id": "meta-evaluating-metrics-regression",
+      "tag": "LLM Judges",
+      "topics": ["judges"],
+      "title": "Fantastic Metrics and How to Find Them: Meta-Evaluating Metrics for Multi-lingual Style-Personalized Generation",
+      "summary": "Argues metric-human correlation is an unstable, inappropriate estimate of a metric's evaluation capability, and proposes a regression-based meta-evaluation that learns on calibrated metric outputs to predict human ratings, scored against a constant-mean baseline and human agreement across 40 settings spanning 10 languages; finds simple string- and embedding-based metrics can match strong LLM judges once calibrated.",
+      "venue": "Jangra & de Wynter · arXiv 2026",
+      "links": [{ "label": "arXiv", "url": "https://arxiv.org/abs/2610.19166" }],
+      "added": "2026-10-19"
+    },
+    {
+      "id": "typed-decision-models-judge-bias",
+      "tag": "LLM Judges",
+      "topics": ["judges"],
+      "title": "Cheap, Consistent, Calibrated, but Biased? Typed Decision Models as Judges",
+      "summary": "Runs the CALM benchmark's twelve bias tests on eight typed decision models (which output a probability per answer instead of generated text) alongside seven LLM judges; every typed decision model is biased on three to eight of twelve tests, good calibration does not protect against bias, and they are more biased than current LLM judges despite being 37x cheaper and more consistent under answer-order swaps.",
+      "venue": "Lukassen et al. · arXiv 2026",
+      "links": [{ "label": "arXiv", "url": "https://arxiv.org/abs/2610.18122" }],
+      "added": "2026-10-19"
     }
   ]
 }

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Weekly brief for the week of 2026-10-19: new work on agent evaluation and statistical methods.">
+  <title>Brief 2026-10-19 — Chloe Yang</title>
+  <link rel="stylesheet" href="/assets/site.css">
+</head>
+<body>
+  <div class="shell">
+    <div class="page-head">
+      <p class="kicker">Weekly brief · 2026-10-19</p>
+      <h1>Multicalibrating LLM judges, and the limits of statistical safety assurance under adaptive adversaries</h1>
+      <p class="lede">6 new entries, 0 updates. The strongest applies multicalibration to bound many LLM-judge biases at once, even unspecified ones, and a close second derives a closed-form bound on how many safety violations an adversary can cause by behaving normally until a statistical test certifies it.</p>
+      <p class="meta"><a href="/research/briefs/">← All briefs</a> · Covers 2026-10-12 to 2026-10-19</p>
+    </div>
+
+    <div class="prose">
+      <h2>New this week</h2>
+      <article class="entry">
+        <div class="entry-meta"><span class="pill">LLM Judges</span></div>
+        <p class="entry-title"><a href="/research/#callm-judge-multicalibration">A CaLLM Judge is a Better Judge: Mitigating Bias in LLM-as-a-judge</a></p>
+        <p class="entry-summary"><b>Method:</b> Treats each known LLM-judge bias (position, verbosity, model family) as miscalibration on an identifiable group, and applies multicalibration to bound bias across many groups simultaneously, including ones not specified in advance.</p>
+        <p class="entry-summary"><b>Why it matters:</b> Proves conditions under which this improves the judge's accuracy rather than trading it off against calibration, and shows reduced multicalibration error and better accuracy on pairwise preference benchmarks.</p>
+        <span class="entry-venue">Barbera et al. · arXiv 2026</span>
+        <span class="entry-links"><a href="https://arxiv.org/abs/2610.18108">[Source]</a></span>
+      </article>
+
+      <article class="entry">
+        <div class="entry-meta"><span class="pill">Uncertainty</span></div>
+        <p class="entry-title"><a href="/research/#statistical-assurance-limits-adversarial">Limits of Statistical Assurance for Embodied and Agentic AI under Adaptive Adversaries</a></p>
+        <p class="entry-summary"><b>Method:</b> Derives a closed-form bound on expected post-certification safety violations from an adversary that preserves unattacked behavior until a statistical safety test certifies it, covering adaptive and privately randomized evaluators.</p>
+        <p class="entry-summary"><b>Why it matters:</b> Validated in simulated robot-collaboration and preregistered randomized AgentDojo trials; a mixture likelihood-ratio monitor with revocation keeps cumulative excess violations bounded, cutting them from 12.00 to 3.81 per 24 assigned task opportunities.</p>
+        <span class="entry-venue">Singh · arXiv 2026</span>
+        <span class="entry-links"><a href="https://arxiv.org/abs/2610.18948">[Source]</a></span>
+      </article>
+
+      <article class="entry">
+        <div class="entry-meta"><span class="pill">Validity</span></div>
+        <p class="entry-title"><a href="/research/#benchmark-saturation-transcripts">Evaluating Model Capabilities After Benchmark Saturation</a></p>
+        <p class="entry-summary"><b>Method:</b> Simulates benchmark saturation retrospectively using historical benchmark and model releases, then tests whether protocols applied only to saturated benchmarks' solved transcripts can predict capability on held-out, unsaturated items.</p>
+        <p class="entry-summary"><b>Why it matters:</b> Pairwise LLM judging of transcripts cuts prediction error 5.3x versus a baseline using only saturated scores, though the signal does not always generalize across distribution shifts, such as underestimating early-2025 reasoning models.</p>
+        <span class="entry-venue">Hamada et al. · arXiv 2026</span>
+        <span class="entry-links"><a href="https://arxiv.org/abs/2610.20667">[Source]</a></span>
+      </article>
+
+      <article class="entry">
+        <div class="entry-meta"><span class="pill">Validity</span></div>
+        <p class="entry-title"><a href="/research/#probabilitybench">ProbabilityBench: Model Evaluation and Calibration with Exact Ground-Truth Uncertainty</a></p>
+        <p class="entry-summary"><b>Method:</b> Builds simulated text-based domains with analytically exact conditional class probabilities, so reported model probabilities can be scored directly against ground truth via KL divergence instead of the usual single-observed-label proxy.</p>
+        <p class="entry-summary"><b>Why it matters:</b> Also serves as a meta-evaluation framework, using the known ground truth to benchmark the accuracy of standard calibration metrics and Bayes-error estimators themselves, not just the 16 models tested.</p>
+        <span class="entry-venue">Dai et al. · arXiv 2026</span>
+        <span class="entry-links"><a href="https://arxiv.org/abs/2610.17016">[Source]</a></span>
+      </article>
+
+      <article class="entry">
+        <div class="entry-meta"><span class="pill">LLM Judges</span></div>
+        <p class="entry-title"><a href="/research/#meta-evaluating-metrics-regression">Fantastic Metrics and How to Find Them: Meta-Evaluating Metrics for Multi-lingual Style-Personalized Generation</a></p>
+        <p class="entry-summary"><b>Method:</b> Argues metric-human correlation is an unstable, inappropriate estimate of a metric's evaluation capability, and proposes a regression-based meta-evaluation that learns on calibrated metric outputs to predict human ratings, scored against a constant-mean baseline and human agreement.</p>
+        <p class="entry-summary"><b>Why it matters:</b> Across 40 evaluation settings spanning 10 languages, simple string- and embedding-based metrics can match strong LLM judges once calibrated, reframing how metric quality should be measured at all.</p>
+        <span class="entry-venue">Jangra &amp; de Wynter · arXiv 2026</span>
+        <span class="entry-links"><a href="https://arxiv.org/abs/2610.19166">[Source]</a></span>
+      </article>
+
+      <article class="entry">
+        <div class="entry-meta"><span class="pill">LLM Judges</span></div>
+        <p class="entry-title"><a href="/research/#typed-decision-models-judge-bias">Cheap, Consistent, Calibrated, but Biased? Typed Decision Models as Judges</a></p>
+        <p class="entry-summary"><b>Method:</b> Runs the CALM benchmark's twelve bias tests on eight typed decision models (which output a probability per answer instead of generated text) alongside seven LLM judges from 2024 and 2026.</p>
+        <p class="entry-summary"><b>Why it matters:</b> Every typed decision model is biased on three to eight of twelve tests, and good calibration does not protect against bias, even though these models are 37x cheaper and more consistent under answer-order swaps than current LLM judges.</p>
+        <span class="entry-venue">Lukassen et al. · arXiv 2026</span>
+        <span class="entry-links"><a href="https://arxiv.org/abs/2610.18122">[Source]</a></span>
+      </article>
+
+      <h2>Considered, not added</h2>
+      <ul>
+        <li>Covariance-Calibrated Prediction-Powered Inference (arXiv 2610.21837): extends PPI to a covariance-calibrated GMM estimator with strong real-data results, but the abstract names no LLM or AI evaluation application.</li>
+        <li>SoK: Grading Open-Text Legal Answers, from Law School Exams to Trustworthy Rubric Judges (arXiv 2610.19992): a survey deriving criteria for LLM-judge grading from educational measurement, but it proposes no specific statistical method of its own and reports no new quantitative result.</li>
+        <li>From Detection to Decision: Calibration and Deferral for Prompt-Injection Detection (arXiv 2610.20907): evaluates calibration and deferral policies for prompt-injection detectors, not model or agent capability evaluation.</li>
+        <li>Output Discipline Sets the Floor (arXiv 2610.18298): a model-agnostic agent protocol that reduces run-to-run variance on a clinical benchmark, but the contribution is an engineering protocol rather than a statistical evaluation method.</li>
+        <li>Online LLM Personalization from Pairwise Preferences Across Users (arXiv 2610.17203): fits Bradley-Terry models for reference utilities, but its focus is personalization, not evaluating models or agents.</li>
+      </ul>
+    </div>
+
+    <footer class="site-foot">© Chloe Yang · Drafted by an agent, reviewed before publishing. The linked source is the authority.</footer>
+  </div>
+  <script src="/assets/site-nav.js"></script>
+</body>
+</html>
