@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-19",
+  "updated": "2026-10-26",
   "items": [
     {
       "id": "brief-2026-09-29",
@@ -32,6 +32,14 @@
       "summary": "6 new entries, 0 updates. The strongest applies multicalibration to bound many LLM-judge biases at once, even unspecified ones, with theoretical conditions under which this improves rather than trades off accuracy.",
       "links": [{ "label": "Read brief", "url": "/research/briefs/2026-10-19.html" }],
       "added": "2026-10-19"
+    },
+    {
+      "id": "brief-2026-10-26",
+      "tag": "Weekly",
+      "title": "Week of 2026-10-26: adaptive sampling for Pareto-optimal arenas, and how much judge instructions can move individual verdicts",
+      "summary": "5 new entries, 0 updates. The strongest gives a fixed-confidence adaptive-sampling algorithm for identifying Pareto-optimal models in multi-objective LLM arenas, with a near-minimax-optimal sample-complexity bound under a multi-objective Bradley-Terry model.",
+      "links": [{ "label": "Read brief", "url": "/research/briefs/2026-10-26.html" }],
+      "added": "2026-10-26"
     }
   ]
 }

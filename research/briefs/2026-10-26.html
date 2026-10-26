@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Weekly brief for the week of 2026-10-26: new work on agent evaluation and statistical methods.">
+  <title>Brief 2026-10-26 — Chloe Yang</title>
+  <link rel="stylesheet" href="/assets/site.css">
+</head>
+<body>
+  <div class="shell">
+    <div class="page-head">
+      <p class="kicker">Weekly brief · 2026-10-26</p>
+      <h1>Adaptive sampling for Pareto-optimal arenas, and how much judge instructions can move individual verdicts</h1>
+      <p class="lede">5 new entries this week, spanning adaptive-sampling leaderboards, anytime-valid auditing of AI decisions, and a factorial study of LLM-judge verdict stability.</p>
+      <p class="meta"><a href="/research/briefs/">← All briefs</a> · Covers 2026-10-19 to 2026-10-26</p>
+    </div>
+
+    <div class="prose">
+      <h2>New this week</h2>
+
+      <article class="entry">
+        <div class="entry-meta"><span class="pill">Comparing Agents</span></div>
+        <p class="entry-title"><a href="/research/#vb-ege-pareto-arenas">Beyond Scalar Leaderboards: Adaptive Sampling for Pareto Frontier Identification in Multi-Objective LLM Arenas</a></p>
+        <p class="entry-summary"><b>Method:</b> A fixed-confidence adaptive-sampling algorithm (VB-EGE) that runs pairwise arena comparisons under a multi-objective Bradley-Terry model, eliminating models once enough statistical evidence certifies their Pareto status, with a near-minimax-optimal sample-complexity bound.</p>
+        <p class="entry-summary"><b>Why it matters:</b> Arena-style human evaluation is expensive; this gives a principled stopping rule for identifying which models are actually on the frontier without exhausting the comparison budget, validated on three real arena datasets.</p>
+        <span class="entry-venue">Shan et al. · arXiv 2026</span>
+        <span class="entry-links"><a href="https://arxiv.org/abs/2610.27447">[Source]</a></span>
+      </article>
+
+      <article class="entry">
+        <div class="entry-meta"><span class="pill">Uncertainty</span></div>
+        <p class="entry-title"><a href="/research/#selective-auditing-ai-decisions">Reliable AI-Assisted Decisions via Selective Auditing</a></p>
+        <p class="entry-summary"><b>Method:</b> Online constrained optimization with distribution-free, provable error-control guarantees on the fraction of unaudited AI errors, including an asymptotically optimal variant under both adversarial and i.i.d. streams.</p>
+        <p class="entry-summary"><b>Why it matters:</b> A rigorous way to decide when an AI decision (with a confidence or verifier score) needs human review, tested directly on screening harmful LLM requests.</p>
+        <span class="entry-venue">Gibbs et al. · arXiv 2026</span>
+        <span class="entry-links"><a href="https://arxiv.org/abs/2610.31662">[Source]</a></span>
+      </article>
+
+      <article class="entry">
+        <div class="entry-meta"><span class="pill">Uncertainty</span></div>
+        <p class="entry-title"><a href="/research/#lifetime-valid-ai-analysts">Lifetime-valid decisions by continually evolving AI analysts</a></p>
+        <p class="entry-summary"><b>Method:</b> Continual validation: each proposed update of an evolving AI system is tested against simulated null-hypothesis data before deployment, with a proof that the lifetime probability of ever deploying an over-the-limit version stays bounded.</p>
+        <p class="entry-summary"><b>Why it matters:</b> Addresses a real production failure mode — Type I error creeping up as an AI system is repeatedly updated — cutting observed error from 0.098-0.183 down to 0.044-0.045 in bioequivalence and A/B-test examples while keeping most of the power.</p>
+        <span class="entry-venue">Sun et al. · arXiv 2026</span>
+        <span class="entry-links"><a href="https://arxiv.org/abs/2610.30562">[Source]</a></span>
+      </article>
+
+      <article class="entry">
+        <div class="entry-meta"><span class="pill">Validity</span></div>
+        <p class="entry-title"><a href="/research/#skilleval-cognitive-diagnosis">SkillEval: Learning Interpretable Ability Profiles of LLMs via Cognitive Diagnosis Models</a></p>
+        <p class="entry-summary"><b>Method:</b> Cognitive diagnosis models from psychometrics, applied to automatically-discovered per-question skills, to estimate a per-skill ability profile for each model instead of one aggregate score.</p>
+        <p class="entry-summary"><b>Why it matters:</b> Across 3,811 models and 9,523 items on five benchmarks, the skill profiles predict held-out item behavior better than average scores, and support cheaper routing and adaptive testing.</p>
+        <span class="entry-venue">Arda et al. · arXiv 2026</span>
+        <span class="entry-links"><a href="https://arxiv.org/abs/2610.28767">[Source]</a></span>
+      </article>
+
+      <article class="entry">
+        <div class="entry-meta"><span class="pill">LLM Judges</span></div>
+        <p class="entry-title"><a href="/research/#arena-hard-judge-sensitivity">Behind Aggregate Scores: What Systematically Varying Arena-Hard's LLM Judge Reveals</a></p>
+        <p class="entry-summary"><b>Method:</b> A full factorial design over eight LLM-judge instruction variants (criteria, output format, task framing), each repeated unchanged at temperature zero, comparing aggregate-score shifts against prompt-level outcome changes.</p>
+        <p class="entry-summary"><b>Why it matters:</b> An unchanged rerun of the same judge setup alone flips the win/tie/loss outcome on 21.2% of prompts even though the aggregate score barely moves — a caution against trusting a stable aggregate as evidence that individual verdicts are repeatable.</p>
+        <span class="entry-venue">Yorke · arXiv 2026</span>
+        <span class="entry-links"><a href="https://arxiv.org/abs/2610.30512">[Source]</a></span>
+      </article>
+
+      <h2>Considered, not added</h2>
+      <ul>
+        <li>Prompting Strategy Effects Depend on the Judge: A Multilingual Study of LLM-as-a-Judge Robustness (arXiv 2610.31172): a large, careful empirical study (9 prompting strategies × 4 judges × 27 languages), but no new statistical method — kept out to keep the bar on methodological contribution.</li>
+        <li>Benchmarking the Quantum Leap: Auditing LLM Evaluation for Quantum Code Generation (arXiv 2610.28678): reports bootstrap confidence intervals and multiplicity-adjusted comparisons, but these are standard reporting practice applied to a new benchmark, not a methodological contribution.</li>
+        <li>Beyond Binary Labels: Diagnostic Evaluation of LLM Safety with Prompt-Level Rubrics (arXiv 2610.29225): a rubric-based safety benchmark; its Cohen's κ and agreement numbers validate the judging setup rather than contribute a method.</li>
+        <li>SANE: Automated Scorer-Specific Metamorphic Testing for LLM Judges (arXiv 2610.28886): a metamorphic-testing framework for judges; Spearman correlation is used only to validate against human labels, not as the paper's core method.</li>
+        <li>Elicitation or Expansion? Demystifying Gains from Agent Harness Optimization (arXiv 2610.27889): uses pass@k as an evaluation lens on harness optimization, but introduces no new inferential method.</li>
+        <li>Alternative Strategies for Active Learning with Bayesian Bradley-Terry Model (arXiv 2610.29416): a Bayesian Bradley-Terry active-learning method with real statistical content, but all experiments are synthetic and the paper is not framed around LLM/agent evaluation.</li>
+      </ul>
+    </div>
+
+    <footer class="site-foot">© Chloe Yang · Drafted by an agent, reviewed before publishing. The linked source is the authority.</footer>
+  </div>
+  <script src="/assets/site-nav.js"></script>
+</body>
+</html>
