@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-19",
+  "updated": "2026-10-26",
   "items": [
     {
       "id": "error-bars-for-evals",
@@ -473,6 +473,56 @@
       "venue": "Lukassen et al. · arXiv 2026",
       "links": [{ "label": "arXiv", "url": "https://arxiv.org/abs/2610.18122" }],
       "added": "2026-10-19"
+    },
+    {
+      "id": "vb-ege-pareto-arenas",
+      "tag": "Comparing Agents",
+      "topics": ["paired"],
+      "title": "Beyond Scalar Leaderboards: Adaptive Sampling for Pareto Frontier Identification in Multi-Objective LLM Arenas",
+      "summary": "Introduces Vector-Borda Empirical-Gap Elimination (VB-EGE), a fixed-confidence adaptive-sampling algorithm that runs pairwise arena comparisons under a multi-objective Bradley-Terry model and eliminates models once enough statistical evidence has accumulated to certify their Pareto-frontier status; proves near-minimax-optimal sample complexity and validates on three real arena datasets (Arena, SearchArena, VisionArena).",
+      "venue": "Shan et al. · arXiv 2026",
+      "links": [{ "label": "arXiv", "url": "https://arxiv.org/abs/2610.27447" }],
+      "added": "2026-10-26"
+    },
+    {
+      "id": "selective-auditing-ai-decisions",
+      "tag": "Uncertainty",
+      "topics": ["uncertainty", "judges"],
+      "title": "Reliable AI-Assisted Decisions via Selective Auditing",
+      "summary": "Frames deciding whether to auto-accept or route an AI decision to a human auditor as an online constrained-optimization problem, and derives algorithms with distribution-free, provable guarantees on the fraction of unaudited AI errors, including one that is asymptotically optimally efficient under both adversarial and i.i.d. data; tested on screening harmful requests to LLMs, text annotation, and data labeling.",
+      "venue": "Gibbs et al. · arXiv 2026",
+      "links": [{ "label": "arXiv", "url": "https://arxiv.org/abs/2610.31662" }],
+      "added": "2026-10-26"
+    },
+    {
+      "id": "lifetime-valid-ai-analysts",
+      "tag": "Uncertainty",
+      "topics": ["uncertainty", "practice"],
+      "title": "Lifetime-valid decisions by continually evolving AI analysts",
+      "summary": "Casts each update of an evolving AI system as a hypothesis test and introduces continual validation, which checks every proposed version against simulated null-hypothesis data before deployment; proves the lifetime probability of ever deploying a version whose Type I error exceeds the target stays bounded, cutting observed Type I error from 0.098-0.183 to 0.044-0.045 in bioequivalence and A/B-test examples while keeping most of the statistical power.",
+      "venue": "Sun et al. · arXiv 2026",
+      "links": [{ "label": "arXiv", "url": "https://arxiv.org/abs/2610.30562" }],
+      "added": "2026-10-26"
+    },
+    {
+      "id": "skilleval-cognitive-diagnosis",
+      "tag": "Validity",
+      "topics": ["validity"],
+      "title": "SkillEval: Learning Interpretable Ability Profiles of LLMs via Cognitive Diagnosis Models",
+      "summary": "Applies cognitive diagnosis models from psychometrics to estimate each LLM's ability on automatically-discovered, per-question skills instead of a single aggregate score, across 3,811 models and 9,523 items on five benchmarks, and shows the resulting skill profiles predict held-out item behavior better than average scores.",
+      "venue": "Arda et al. · arXiv 2026",
+      "links": [{ "label": "arXiv", "url": "https://arxiv.org/abs/2610.28767" }],
+      "added": "2026-10-26"
+    },
+    {
+      "id": "arena-hard-judge-sensitivity",
+      "tag": "LLM Judges",
+      "topics": ["judges", "multi-trial"],
+      "title": "Behind Aggregate Scores: What Systematically Varying Arena-Hard's LLM Judge Reveals",
+      "summary": "Runs GPT-4.1 as an Arena-Hard judge across a full factorial design of eight instruction variants, each repeated unchanged at temperature zero, and shows a stable aggregate score can hide large shifts underneath: an unchanged rerun alone flips the win/tie/loss outcome on 21.2% of prompts, so evaluations relying on individual verdicts should repeat each setup and report prompt-level agreement, not just the aggregate.",
+      "venue": "Yorke · arXiv 2026",
+      "links": [{ "label": "arXiv", "url": "https://arxiv.org/abs/2610.30512" }],
+      "added": "2026-10-26"
     }
   ]
 }
