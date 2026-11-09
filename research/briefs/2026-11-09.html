@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Weekly brief for the week of 2026-11-09: new work on agent evaluation and statistical methods.">
+  <title>Brief 2026-11-09 — Chloe Yang</title>
+  <link rel="stylesheet" href="/assets/site.css">
+</head>
+<body>
+  <div class="shell">
+    <div class="page-head">
+      <p class="kicker">Weekly brief · 2026-11-09</p>
+      <h1>Beta mixtures for cheap pass@k intervals, and a run of new work on calibrating LLM judges</h1>
+      <p class="lede">8 new entries this week, closing the gap since the last update: a closed-form Beta-mixture estimator for pass@k/pass^k confidence intervals, four different approaches to judge calibration and bias, a new graph-based independence test applied to judge preferences, and METR's statistical assessment of AI-driven R&D acceleration at Anthropic.</p>
+      <p class="meta"><a href="/research/briefs/">← All briefs</a> · Covers 2026-10-26 to 2026-11-09</p>
+    </div>
+
+    <div class="prose">
+      <h2>New this week</h2>
+
+      <article class="entry">
+        <div class="entry-meta"><span class="pill">Reliability</span></div>
+        <p class="entry-title"><a href="/research/#beta-mixtures-low-budget-eval">Few Trials, Many Metrics: Beta Mixtures for Low-Budget AI Evaluation</a></p>
+        <p class="entry-summary"><b>Method:</b> Fits a BIC-selected mixture of Beta distributions to per-instance success rates from only a handful of trials, then derives Pass@k, Pass^k and AUC@k, with delta-method confidence intervals, in closed form with no extra model calls.</p>
+        <p class="entry-summary"><b>Why it matters:</b> Repeated-sampling metrics are expensive to estimate well; this extrapolates accurately beyond the observed number of trials on math and science benchmarks, and the intervals cover the full-data reference.</p>
+        <span class="entry-venue">Tironi et al. · arXiv 2026</span>
+        <span class="entry-links"><a href="https://arxiv.org/abs/2611.00474">[Source]</a></span>
+      </article>
+
+      <article class="entry">
+        <div class="entry-meta"><span class="pill">LLM Judges</span></div>
+        <p class="entry-title"><a href="/research/#voirdire-counterfactual-judge-calibration">VoirDire: Counterfactual Calibration for Reliable LLM-as-a-Judge Aggregation</a></p>
+        <p class="entry-summary"><b>Method:</b> Makes controlled counterfactual edits to a response's surface attributes (length, formatting, fluency), measures how much each judge's score shifts, and down-weights those bias-sensitive directions when aggregating a judge panel.</p>
+        <p class="entry-summary"><b>Why it matters:</b> Judge panels can agree because they share the same surface biases, not because the output is actually better; across 12 datasets this cuts error by up to 26.8% on continuous scoring and improves accuracy by up to 5.3 points on binary/preference tasks.</p>
+        <span class="entry-venue">Shin &amp; Sala · arXiv 2026</span>
+        <span class="entry-links"><a href="https://arxiv.org/abs/2611.00491">[Source]</a></span>
+      </article>
+
+      <article class="entry">
+        <div class="entry-meta"><span class="pill">LLM Judges</span></div>
+        <p class="entry-title"><a href="/research/#streaming-quantile-judge-calibration">Quantiles, Not Points: Streaming Quantile Matching for Ordinal-Aware LLM-as-a-Judge Calibration</a></p>
+        <p class="entry-summary"><b>Method:</b> Treats LLM-judge scores as draws from a distribution rather than isolated points and calibrates them to a small human-labeled anchor set with streaming quantile matching, an optimal-transport map that preserves the anchor set's ordinal structure.</p>
+        <p class="entry-summary"><b>Why it matters:</b> Beats prior post-hoc calibrators on distributional fidelity and narrows the accuracy gap between smaller and larger judge models, which could make cheaper judges more viable.</p>
+        <span class="entry-venue">Subasic et al. · arXiv 2026</span>
+        <span class="entry-links"><a href="https://arxiv.org/abs/2611.00447">[Source]</a></span>
+      </article>
+
+      <article class="entry">
+        <div class="entry-meta"><span class="pill">LLM Judges</span></div>
+        <p class="entry-title"><a href="/research/#multi-estimate-elicitation-debias">Multi-Estimate Elicitation Does Not Uniformly Debias Language Model Judgments</a></p>
+        <p class="entry-summary"><b>Method:</b> A preregistered study of 45 confirmatory tests across five classic judgment-bias tasks (anchoring, hindsight, base-rate, conjunction, status-quo) and six model configurations, comparing single-estimate against multi-estimate elicitation.</p>
+        <p class="entry-summary"><b>Why it matters:</b> A popular debiasing trick — asking the model for several weighted estimates instead of one — does not uniformly reduce these biases, and raises post-outcome confirmation error by about 10.7 points in at least one configuration.</p>
+        <span class="entry-venue">Jhang · arXiv 2026</span>
+        <span class="entry-links"><a href="https://arxiv.org/abs/2611.00597">[Source]</a></span>
+      </article>
+
+      <article class="entry">
+        <div class="entry-meta"><span class="pill">Validity</span></div>
+        <p class="entry-title"><a href="/research/#graph-based-cmi-test-llm-eval">Graph-Based Testing of Conditional Mean Independence with Applications to Large Language Model Evaluation</a></p>
+        <p class="entry-summary"><b>Method:</b> A graph-based conditional-mean-independence test extending the edge-count principle, with sample-splitting or cross-fitting giving analytic p-values under an asymptotic normal null.</p>
+        <p class="entry-summary"><b>Why it matters:</b> Applied to LLM response preferences, it gives a principled way to check whether an LLM judge's verdicts are explained by response length or other recorded covariates rather than genuine quality.</p>
+        <span class="entry-venue">Liu et al. · arXiv 2026</span>
+        <span class="entry-links"><a href="https://arxiv.org/abs/2611.01773">[Source]</a></span>
+      </article>
+
+      <article class="entry">
+        <div class="entry-meta"><span class="pill">LLM Judges</span></div>
+        <p class="entry-title"><a href="/research/#calibration-constrained-self-eval-diagnostics">Calibration-Constrained Diagnostics for Evaluating LLM Self-Evaluation</a></p>
+        <p class="entry-summary"><b>Method:</b> Category-level calibration diagnostics (PVC and C-PVC), aggregated with a Volume Under Surface and a positive-margin restriction, applied across 13 models and four reasoning benchmarks.</p>
+        <p class="entry-summary"><b>Why it matters:</b> A model that looks strongest under standard aggregate calibration metrics can still fail this category-level check, exposing act-or-defer failures that ECE and Brier score miss.</p>
+        <span class="entry-venue">Woo et al. · arXiv 2026</span>
+        <span class="entry-links"><a href="https://arxiv.org/abs/2611.02253">[Source]</a></span>
+      </article>
+
+      <article class="entry">
+        <div class="entry-meta"><span class="pill">Reliability</span></div>
+        <p class="entry-title"><a href="/research/#monte-carlo-llm-reliability-dsqa">One Run Is Not Enough: A Monte Carlo Protocol for Evaluating LLM Reliability on Data Science Tasks</a></p>
+        <p class="entry-summary"><b>Method:</b> DS-QA, 100 data-science and statistics questions from UK university courses across 16 datasets and three difficulty levels, each run 100 times per model under a Monte Carlo protocol instead of a single pass.</p>
+        <p class="entry-summary"><b>Why it matters:</b> Finds substantial run-to-run variability on data-visualization and supervised-learning tasks that a one-shot accuracy score would hide, arguing consistency should be reported alongside quality.</p>
+        <span class="entry-venue">Ni et al. · arXiv 2026</span>
+        <span class="entry-links"><a href="https://arxiv.org/abs/2611.09729">[Source]</a></span>
+      </article>
+
+      <article class="entry">
+        <div class="entry-meta"><span class="pill">In Practice</span></div>
+        <p class="entry-title"><a href="/research/#metr-anthropic-ai-rd-acceleration">Independent Assessment of AI R&amp;D Acceleration at Anthropic in October 2026</a></p>
+        <p class="entry-summary"><b>Method:</b> A breakpoint OLS trend fit on a benchmark capability index, with stratified-bootstrap confidence intervals and a sensitivity analysis across six link-function choices for the index.</p>
+        <p class="entry-summary"><b>Why it matters:</b> A rare case of a lab publishing its uncertainty analysis for a headline capability claim: the main estimate is 1.9x acceleration (95% CI 1.5-2.8x), but the point estimate ranges from 1.1x to 2.9x depending on the link function alone.</p>
+        <span class="entry-venue">METR blog · Nov 2026</span>
+        <span class="entry-links"><a href="https://metr.org/blog/2026-11-05-anthropic-ai-rd-acceleration-assessment/">[Source]</a></span>
+      </article>
+
+      <h2>Considered, not added</h2>
+      <ul>
+        <li>From Small to Large: Assessing Medical Reasoning, Benchmark Contamination, and Model Size in Language Models (arXiv 2611.00460): a careful contamination/model-size study on medical QA, but reports only descriptive accuracy gaps — no confidence intervals, hypothesis tests, or other inferential method.</li>
+        <li>Epoch AI's "Updating the ECI methodology to use a Bayesian model" (a Bayesian rework of the Epoch Capabilities Index with credible intervals, which looks like a strong "In Practice" candidate): could not open epoch.ai from this environment to verify the exact title and date, so left out rather than cite from secondhand summaries.</li>
+        <li>A Controlled Experimental Evaluation of Configuration and Cache Architecture in LLM Serving Engines (arXiv 2611.05991): a systems-benchmarking study of serving infrastructure, not model/agent evaluation statistics.</li>
+      </ul>
+    </div>
+
+    <footer class="site-foot">© Chloe Yang · Drafted by an agent, reviewed before publishing. The linked source is the authority.</footer>
+  </div>
+  <script src="/assets/site-nav.js"></script>
+</body>
+</html>
