@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Weekly brief for the week of 2026-11-02: new work on agent evaluation and statistical methods.">
+  <title>Brief 2026-11-02 — Chloe Yang</title>
+  <link rel="stylesheet" href="/assets/site.css">
+</head>
+<body>
+  <div class="shell">
+    <div class="page-head">
+      <p class="kicker">Weekly brief · 2026-11-02</p>
+      <h1>A pre-registered fairness protocol, auditing data reuse, and two new ways judges go wrong</h1>
+      <p class="lede">4 new entries this week, spanning a pre-registered fairness-evaluation protocol, a data-reuse audit for benchmark leakage, and two judge-reliability findings — one on grading proxy-optimization gains, one on writer-model self-preference bias.</p>
+      <p class="meta"><a href="/research/briefs/">← All briefs</a> · Covers 2026-10-26 to 2026-11-02</p>
+    </div>
+
+    <div class="prose">
+      <h2>New this week</h2>
+
+      <article class="entry">
+        <div class="entry-meta"><span class="pill">Validity</span></div>
+        <p class="entry-title"><a href="/research/#qistas-fairness-protocol">Qistas: A Pre-Registered, Portable Protocol for Fairness Evaluation of Large Language Models</a></p>
+        <p class="entry-summary"><b>Method:</b> Every comparison is paired by construction and analyzed with sign-flip permutation tests, exact McNemar tests, template-clustered bootstrap intervals, and Holm-corrected multiple comparisons, backed by a power analysis fixed before data collection that accounts for the design effect of template clustering.</p>
+        <p class="entry-summary"><b>Why it matters:</b> A protocol paper (no model results yet) built around a real failure mode: fairness benchmarks translated across societies carry categories that don't apply, and its pilot audit found 24 of 25 template groups in a 58-item seed bank failed at least one check before any model was even run.</p>
+        <span class="entry-venue">Alseelawi & Aljumaily · arXiv 2026</span>
+        <span class="entry-links"><a href="https://arxiv.org/abs/2610.40893">[Source]</a></span>
+      </article>
+
+      <article class="entry">
+        <div class="entry-meta"><span class="pill">Validity</span></div>
+        <p class="entry-title"><a href="/research/#reuscope-data-reuse-audit">ReuScope: Auditing Data Reuse and Evaluation Sensitivity in Capsule Vision 2024</a></p>
+        <p class="entry-summary"><b>Method:</b> Paired-seed removal experiments, matched controls, a difference-in-differences estimate, and paired-t confidence intervals, applied across ten paired seeds to a benchmark with byte-identical files crossing the train/validation boundary.</p>
+        <p class="entry-summary"><b>Why it matters:</b> Removing the overlapping source data drops accuracy on the public validation split (82.5% to 61.2%) but improves it on a different split — the paper's point is that this kind of swing measures sensitivity to source removal, not leakage-inflated scores, and the two are easy to conflate.</p>
+        <span class="entry-venue">Choi et al. · arXiv 2026</span>
+        <span class="entry-links"><a href="https://arxiv.org/abs/2610.41835">[Source]</a></span>
+      </article>
+
+      <article class="entry">
+        <div class="entry-meta"><span class="pill">LLM Judges</span></div>
+        <p class="entry-title"><a href="/research/#pace-human-gain-curves">Predicting Human-Gain Curves under Local Proxy Optimization from Repeated Ratings</a></p>
+        <p class="entry-summary"><b>Method:</b> Models optimizing against a fixed proxy (e.g., an LLM-judge score) as a KL-regularized exponential tilt, estimating a first-order alignment coefficient and a second-order correction from repeated human ratings on calibration items to predict the human-gain curve on held-out items.</p>
+        <p class="entry-summary"><b>Why it matters:</b> Average proxy-human correlation alone can't tell you whether pushing harder on a proxy (including an LLM-judge proxy) keeps helping or starts hurting real quality; this gives a pre-optimization diagnostic for that, tested on summarization, translation, and a GPT-4o judge-proxy experiment.</p>
+        <span class="entry-venue">Choi, Nam & Lee · arXiv 2026</span>
+        <span class="entry-links"><a href="https://arxiv.org/abs/2610.41114">[Source]</a></span>
+      </article>
+
+      <article class="entry">
+        <div class="entry-meta"><span class="pill">LLM Judges</span></div>
+        <p class="entry-title"><a href="/research/#ai-evaluator-writer-preference-bias">AI evaluators favor job applications written by certain AI models, independent of candidate quality</a></p>
+        <p class="entry-summary"><b>Method:</b> A multi-model auditing framework crossing 11 LLM writer agents with 9 evaluator agents over 10 jobs and 50 candidates each, identifying a consistent global writer-preference ranking and self-preference bias, then using feature analysis to trace both to shared stylistic cues rather than an unmeasured per-writer "fingerprint."</p>
+        <p class="entry-summary"><b>Why it matters:</b> In an all-AI hiring pipeline, which model a candidate used to write their cover letter measurably changes their odds — about 1.8 of 25 qualified candidates filtered out purely on model mismatch in the worst pairing — independent of how good the application actually is.</p>
+        <span class="entry-venue">Pagan et al. · arXiv 2026</span>
+        <span class="entry-links"><a href="https://arxiv.org/abs/2610.41866">[Source]</a></span>
+      </article>
+
+      <h2>Considered, not added</h2>
+      <ul>
+        <li>Towards Understanding Score-Seeking in LLMs (arXiv 2610.41014): a careful behavioral study of reward-hacking/score-seeking in production models, but no statistical evaluation method is the contribution — it's about why models game graders, not how to measure evaluations.</li>
+        <li>Counterfactual Pairwise Augmentation Improves Small Pointwise LLM Judges (arXiv 2610.41149): improves small judges via joint pointwise/counterfactual-pairwise training; its evaluation is macro-F1 against a frontier judge, not a new statistical method.</li>
+        <li>Multi-Test Nation Bias Benchmarking of LLMs with Explicit Unbiased Baselines (arXiv 2610.41486): constructs pseudo-unbiased baselines from UN voting records for a bias benchmark, but doesn't foreground an inferential statistical method beyond baseline comparison.</li>
+        <li>Real Computation or Merely Naming? A Pre-Registered Mechanism Audit of 25 Cognitive-Architecture Modules (arXiv 2610.41604): a pre-registered audit, but the method is a structured code/trace audit with pass/fail counts, not a statistical technique.</li>
+        <li>One Verdict Is Not Enough: Regression Testing Learned World Models and Their Test Harnesses (arXiv 2610.41130): a reliability protocol for video world-model test harnesses (outcome-class counts, verdict rates), close to this catalog's scope but about physical world models rather than LLMs/agents.</li>
+        <li>ANGLER / REEF: Verifier-Grounded Benchmarking with an Adaptive Attacker for Web Agents (arXiv 2610.41272): a solid new security benchmark for web agents, but no statistical evaluation method beyond state-based verification.</li>
+      </ul>
+    </div>
+
+    <footer class="site-foot">© Chloe Yang · Drafted by an agent, reviewed before publishing. The linked source is the authority.</footer>
+  </div>
+  <script src="/assets/site-nav.js"></script>
+</body>
+</html>
