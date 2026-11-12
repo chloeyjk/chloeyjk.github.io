@@ -525,6 +525,46 @@
       "added": "2026-10-26"
     },
     {
+      "id": "qistas-fairness-protocol",
+      "tag": "Validity",
+      "topics": ["validity"],
+      "title": "Qistas: A Pre-Registered, Portable Protocol for Fairness Evaluation of Large Language Models",
+      "summary": "A pre-registered protocol for LLM fairness evaluation that pairs every comparison by construction and analyzes it with paired machinery — sign-flip permutation tests, exact McNemar tests, template-clustered bootstrap intervals, Holm-corrected multiple comparisons — plus a power analysis, fixed before data collection, that sets the smallest detectable effect per axis after the design effect of template clustering.",
+      "venue": "Alseelawi & Aljumaily · arXiv 2026",
+      "links": [{ "label": "arXiv", "url": "https://arxiv.org/abs/2610.40893" }],
+      "added": "2026-11-02"
+    },
+    {
+      "id": "reuscope-data-reuse-audit",
+      "tag": "Validity",
+      "topics": ["validity"],
+      "title": "ReuScope: Auditing Data Reuse and Evaluation Sensitivity in Capsule Vision 2024",
+      "summary": "Audits train/validation data reuse in a medical-imaging benchmark with paired-seed removal experiments, matched controls, a difference-in-differences estimate, and paired-t confidence intervals, showing that removing overlapping source recordings drops reported accuracy on one validation split but improves it on another — a procedure for distinguishing observed data reuse from genuine leakage-driven score inflation.",
+      "venue": "Choi et al. · arXiv 2026",
+      "links": [{ "label": "arXiv", "url": "https://arxiv.org/abs/2610.41835" }],
+      "added": "2026-11-02"
+    },
+    {
+      "id": "pace-human-gain-curves",
+      "tag": "LLM Judges",
+      "topics": ["judges"],
+      "title": "Predicting Human-Gain Curves under Local Proxy Optimization from Repeated Ratings",
+      "summary": "Introduces PACE, a pre-optimization diagnostic that models optimizing against a fixed proxy (such as an LLM-judge score) as a KL-regularized exponential tilt, estimating two coefficients from repeated human ratings on calibration items to predict how human-perceived quality changes as optimization strength increases, validated on summarization, translation, and a GPT-4o judge-proxy experiment.",
+      "venue": "Choi, Nam & Lee · arXiv 2026",
+      "links": [{ "label": "arXiv", "url": "https://arxiv.org/abs/2610.41114" }],
+      "added": "2026-11-02"
+    },
+    {
+      "id": "ai-evaluator-writer-preference-bias",
+      "tag": "LLM Judges",
+      "topics": ["judges"],
+      "title": "AI evaluators favor job applications written by certain AI models, independent of candidate quality",
+      "summary": "A multi-model auditing framework pairing 11 LLM writer agents with 9 evaluator agents across 10 jobs and 50 candidates each finds a consistent global ranking of writer models by evaluator acceptance plus self-preference bias, traced via feature analysis to stylistic cues the evaluators reward or penalize, with an estimated 1.8 of 25 qualified candidates filtered out per adverse writer/evaluator pairing purely on model choice.",
+      "venue": "Pagan et al. · arXiv 2026",
+      "links": [{ "label": "arXiv", "url": "https://arxiv.org/abs/2610.41866" }],
+      "added": "2026-11-02"
+    },
+    {
       "id": "beta-mixtures-low-budget-eval",
       "tag": "Reliability",
       "topics": ["multi-trial", "uncertainty"],
