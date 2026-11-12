@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-02",
+  "updated": "2026-11-09",
   "items": [
     {
       "id": "error-bars-for-evals",
@@ -563,6 +563,86 @@
       "venue": "Pagan et al. · arXiv 2026",
       "links": [{ "label": "arXiv", "url": "https://arxiv.org/abs/2610.41866" }],
       "added": "2026-11-02"
+    },
+    {
+      "id": "beta-mixtures-low-budget-eval",
+      "tag": "Reliability",
+      "topics": ["multi-trial", "uncertainty"],
+      "title": "Few Trials, Many Metrics: Beta Mixtures for Low-Budget AI Evaluation",
+      "summary": "Fits a BIC-selected mixture of Beta distributions to per-instance success rates from only a handful of trials, then derives Pass@k, Pass^k and AUC@k, with delta-method confidence intervals, in closed form with no extra model calls, and shows the mixture extrapolates more accurately beyond the observed number of trials than naive estimation on math and science benchmarks.",
+      "venue": "Tironi et al. · arXiv 2026",
+      "links": [{ "label": "arXiv", "url": "https://arxiv.org/abs/2611.00474" }],
+      "added": "2026-11-09"
+    },
+    {
+      "id": "voirdire-counterfactual-judge-calibration",
+      "tag": "LLM Judges",
+      "topics": ["judges"],
+      "title": "VoirDire: Counterfactual Calibration for Reliable LLM-as-a-Judge Aggregation",
+      "summary": "Makes controlled counterfactual edits to a response's surface attributes (length, formatting, fluency), measures how much each judge's score shifts, and uses those shifts to down-weight bias-sensitive directions when aggregating a judge panel, cutting error by up to 26.8% on continuous-scoring tasks and improving accuracy by up to 5.3 points on binary or preference tasks across 12 datasets.",
+      "venue": "Shin & Sala · arXiv 2026",
+      "links": [{ "label": "arXiv", "url": "https://arxiv.org/abs/2611.00491" }],
+      "added": "2026-11-09"
+    },
+    {
+      "id": "streaming-quantile-judge-calibration",
+      "tag": "LLM Judges",
+      "topics": ["judges"],
+      "title": "Quantiles, Not Points: Streaming Quantile Matching for Ordinal-Aware LLM-as-a-Judge Calibration",
+      "summary": "Treats LLM-judge scores as draws from a distribution rather than isolated points and calibrates them to a small human-labeled anchor set with streaming quantile matching, an optimal-transport map that preserves the anchor set's ordinal structure, beating prior post-hoc calibrators on distributional fidelity and narrowing the accuracy gap between smaller and larger judge models.",
+      "venue": "Subasic et al. · arXiv 2026",
+      "links": [{ "label": "arXiv", "url": "https://arxiv.org/abs/2611.00447" }],
+      "added": "2026-11-09"
+    },
+    {
+      "id": "multi-estimate-elicitation-debias",
+      "tag": "LLM Judges",
+      "topics": ["judges"],
+      "title": "Multi-Estimate Elicitation Does Not Uniformly Debias Language Model Judgments",
+      "summary": "A preregistered study running 45 confirmatory tests across five classic judgment-bias tasks (anchoring, hindsight, base-rate, conjunction, status-quo) and six model configurations finds that asking a model for several weighted estimates in one response, rather than a single point estimate, does not uniformly reduce these biases, and increases post-outcome confirmation error by about 10.7 points in at least one configuration.",
+      "venue": "Jhang · arXiv 2026",
+      "links": [{ "label": "arXiv", "url": "https://arxiv.org/abs/2611.00597" }],
+      "added": "2026-11-09"
+    },
+    {
+      "id": "graph-based-cmi-test-llm-eval",
+      "tag": "Validity",
+      "topics": ["validity", "judges"],
+      "title": "Graph-Based Testing of Conditional Mean Independence with Applications to Large Language Model Evaluation",
+      "summary": "Develops a graph-based conditional-mean-independence test — extending the edge-count principle with sample-splitting or cross-fitting to get analytic p-values under an asymptotic normal null — and applies it to check whether an LLM judge's preferences are actually explained by response length or other recorded covariates rather than genuine quality.",
+      "venue": "Liu et al. · arXiv 2026",
+      "links": [{ "label": "arXiv", "url": "https://arxiv.org/abs/2611.01773" }],
+      "added": "2026-11-09"
+    },
+    {
+      "id": "calibration-constrained-self-eval-diagnostics",
+      "tag": "LLM Judges",
+      "topics": ["judges", "validity"],
+      "title": "Calibration-Constrained Diagnostics for Evaluating LLM Self-Evaluation",
+      "summary": "Introduces category-level calibration diagnostics (PVC and C-PVC), aggregated with a Volume Under Surface and a positive-margin restriction, to test whether a model's self-reported confidence can support act-or-defer decisions; across 13 models and four reasoning benchmarks, a model that looks best under standard aggregate calibration metrics can still fail this category-level check in ways ECE and Brier score miss.",
+      "venue": "Woo et al. · arXiv 2026",
+      "links": [{ "label": "arXiv", "url": "https://arxiv.org/abs/2611.02253" }],
+      "added": "2026-11-09"
+    },
+    {
+      "id": "monte-carlo-llm-reliability-dsqa",
+      "tag": "Reliability",
+      "topics": ["multi-trial"],
+      "title": "One Run Is Not Enough: A Monte Carlo Protocol for Evaluating LLM Reliability on Data Science Tasks",
+      "summary": "Introduces DS-QA, 100 data-science and statistics questions drawn from UK university courses across 16 datasets and three difficulty levels, and runs each question 100 times per model under a Monte Carlo protocol instead of the usual single pass, finding substantial run-to-run variability on data-visualization and supervised-learning tasks that a one-shot accuracy score would hide.",
+      "venue": "Ni et al. · arXiv 2026",
+      "links": [{ "label": "arXiv", "url": "https://arxiv.org/abs/2611.09729" }],
+      "added": "2026-11-09"
+    },
+    {
+      "id": "metr-anthropic-ai-rd-acceleration",
+      "tag": "In Practice",
+      "topics": ["practice", "uncertainty"],
+      "title": "Independent Assessment of AI R&D Acceleration at Anthropic in October 2026",
+      "summary": "Estimates how much AI tools have accelerated Anthropic's internal AI R&D with a breakpoint OLS trend fit on a benchmark capability index, reporting a 1.9x acceleration (95% CI 1.5-2.8x) from a stratified bootstrap over benchmark scores, and runs a sensitivity analysis across six link-function choices for the index that moves the point estimate from 1.1x to 2.9x depending on the link.",
+      "venue": "METR blog · Nov 2026",
+      "links": [{ "label": "Blog", "url": "https://metr.org/blog/2026-11-05-anthropic-ai-rd-acceleration-assessment/" }],
+      "added": "2026-11-09"
     }
   ]
 }

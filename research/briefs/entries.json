@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-02",
+  "updated": "2026-11-09",
   "items": [
     {
       "id": "brief-2026-09-29",
@@ -48,6 +48,14 @@
       "summary": "4 new entries, 0 updates. The strongest is a pre-registered protocol for LLM fairness evaluation using paired permutation and McNemar tests, template-clustered bootstrap intervals, and a power analysis fixed before any model is run.",
       "links": [{ "label": "Read brief", "url": "/research/briefs/2026-11-02.html" }],
       "added": "2026-11-02"
+    },
+    {
+      "id": "brief-2026-11-09",
+      "tag": "Weekly",
+      "title": "Week of 2026-11-09: beta mixtures for cheap pass@k intervals, and a run of new work on calibrating LLM judges",
+      "summary": "8 new entries, 0 updates. The strongest fits a BIC-selected mixture of Beta distributions to a handful of trials and derives Pass@k, Pass^k, and delta-method confidence intervals in closed form with no extra model calls.",
+      "links": [{ "label": "Read brief", "url": "/research/briefs/2026-11-09.html" }],
+      "added": "2026-11-09"
     }
   ]
 }
