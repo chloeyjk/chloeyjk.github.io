@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-09",
+  "updated": "2026-11-16",
   "items": [
     {
       "id": "error-bars-for-evals",
@@ -643,6 +643,46 @@
       "venue": "METR blog · Nov 2026",
       "links": [{ "label": "Blog", "url": "https://metr.org/blog/2026-11-05-anthropic-ai-rd-acceleration-assessment/" }],
       "added": "2026-11-09"
+    },
+    {
+      "id": "prediction-powered-llm-ranking",
+      "tag": "LLM Judges",
+      "topics": ["judges", "paired"],
+      "title": "Prediction-Powered LLM Ranking with Adaptively Collected Human Feedback",
+      "summary": "Ranks LLMs by combining adaptively collected human feedback with cheaper LLM-judge predictions, using data-driven prediction weights that minimize asymptotic variance and a joint martingale analysis to keep inference valid despite adaptive sampling and judge bias.",
+      "venue": "Sargent et al. · arXiv 2026",
+      "links": [{ "label": "arXiv", "url": "https://arxiv.org/abs/2611.13186" }],
+      "added": "2026-11-16"
+    },
+    {
+      "id": "compositional-collapse-measurement-limits",
+      "tag": "Validity",
+      "topics": ["validity", "judges"],
+      "title": "Agreeing on the Answer but Not the Reason: Measurement Limits of LLM Reasoning Failure Taxonomies",
+      "summary": "Audits a reasoning-failure taxonomy across twelve models and eleven languages and finds its reported category share swings from 26% to 76% depending on classifier tie-break order; Cohen's kappa shows humans and the classifier agree on raw correctness (kappa=0.932) but barely agree on the failure category (kappa=0.093), with the gap traced to prompt wording rather than the underlying model.",
+      "venue": "Beesetty · arXiv 2026",
+      "links": [{ "label": "arXiv", "url": "https://arxiv.org/abs/2611.13140" }],
+      "added": "2026-11-16"
+    },
+    {
+      "id": "rising-standards-human-evaluation-drift",
+      "tag": "In Practice",
+      "topics": ["practice", "validity"],
+      "title": "AI Isn't Getting Dumber, We're Getting Pickier: Rising Standards in Human Evaluation of Large Language Models",
+      "summary": "Analyzes 1.26 million Chatbot Arena votes on version-locked model pairs and estimates shared month effects across models to show that human judging standards drift upward over time even while relative rankings stay flat, with the drift surviving within-voter, within-pair, cohort, and prompt-controlled checks.",
+      "venue": "Chen et al. · arXiv 2026",
+      "links": [{ "label": "arXiv", "url": "https://arxiv.org/abs/2611.14333" }],
+      "added": "2026-11-16"
+    },
+    {
+      "id": "when-both-sides-adapt-interactive-eval",
+      "tag": "Validity",
+      "topics": ["validity", "paired"],
+      "title": "When Both Sides Adapt: The Challenges of Evaluating Interactive LLM Systems",
+      "summary": "Formalizes offline benchmark evaluation and live A/B testing as estimators of two different estimands (a common-distribution effect versus an induced-distribution effect created by user adaptivity), derives a sufficient condition for when their model rankings agree, and shows in a linear model that user adaptivity inflates estimation variance.",
+      "venue": "Li · arXiv 2026",
+      "links": [{ "label": "arXiv", "url": "https://arxiv.org/abs/2611.17239" }],
+      "added": "2026-11-16"
     }
   ]
 }

@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-09",
+  "updated": "2026-11-16",
   "items": [
     {
       "id": "brief-2026-09-29",
@@ -56,6 +56,14 @@
       "summary": "8 new entries, 0 updates. The strongest fits a BIC-selected mixture of Beta distributions to a handful of trials and derives Pass@k, Pass^k, and delta-method confidence intervals in closed form with no extra model calls.",
       "links": [{ "label": "Read brief", "url": "/research/briefs/2026-11-09.html" }],
       "added": "2026-11-09"
+    },
+    {
+      "id": "brief-2026-11-16",
+      "tag": "Weekly",
+      "title": "Week of 2026-11-16: prediction-powered judge rankings, and three ways the benchmark moves under you",
+      "summary": "4 new entries, 0 updates. The strongest gives a martingale-based prediction-powered inference method for ranking LLMs that stays statistically valid when human feedback is collected adaptively and supplemented with biased LLM-judge predictions.",
+      "links": [{ "label": "Read brief", "url": "/research/briefs/2026-11-16.html" }],
+      "added": "2026-11-16"
     }
   ]
 }

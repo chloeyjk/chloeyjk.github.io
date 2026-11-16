@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Weekly brief for the week of 2026-11-16: new work on agent evaluation and statistical methods.">
+  <title>Brief 2026-11-16 — Chloe Yang</title>
+  <link rel="stylesheet" href="/assets/site.css">
+</head>
+<body>
+  <div class="shell">
+    <div class="page-head">
+      <p class="kicker">Weekly brief · 2026-11-16</p>
+      <h1>Prediction-powered judge rankings, and three different ways "the benchmark" moves under you</h1>
+      <p class="lede">4 new entries this week: a martingale-based prediction-powered inference method for ranking LLMs from adaptively collected human feedback plus judge scores, an audit showing a reasoning-failure taxonomy's reported rate depends more on classifier tie-break order than on the model, a decomposition of 1.26 million Chatbot Arena votes showing human judging standards drift upward over time, and a formal account of why offline benchmarks and live A/B tests can rank the same models differently.</p>
+      <p class="meta"><a href="/research/briefs/">← All briefs</a> · Covers 2026-11-09 to 2026-11-16</p>
+    </div>
+
+    <div class="prose">
+      <h2>New this week</h2>
+
+      <article class="entry">
+        <div class="entry-meta"><span class="pill">LLM Judges</span></div>
+        <p class="entry-title"><a href="/research/#prediction-powered-llm-ranking">Prediction-Powered LLM Ranking with Adaptively Collected Human Feedback</a></p>
+        <p class="entry-summary"><b>Method:</b> Prediction-Powered Ranking (PP-Rank) combines LLM-judge predictions with adaptively collected human feedback, choosing data-driven prediction weights that minimize asymptotic variance and using a joint martingale analysis to keep inference valid despite the adaptive sampling and judge bias.</p>
+        <p class="entry-summary"><b>Why it matters:</b> Evaluation platforms collect human feedback adaptively to focus on informative comparisons, which breaks the i.i.d. assumptions behind standard confidence intervals; this gives narrower intervals and valid simultaneous ranking certification while cutting human-labeling cost.</p>
+        <span class="entry-venue">Sargent et al. · arXiv 2026</span>
+        <span class="entry-links"><a href="https://arxiv.org/abs/2611.13186">[Source]</a></span>
+      </article>
+
+      <article class="entry">
+        <div class="entry-meta"><span class="pill">Validity</span></div>
+        <p class="entry-title"><a href="/research/#compositional-collapse-measurement-limits">Agreeing on the Answer but Not the Reason: Measurement Limits of LLM Reasoning Failure Taxonomies</a></p>
+        <p class="entry-summary"><b>Method:</b> Defines a reasoning-failure category and measures it across twelve models and eleven languages; finds its reported share swings from 26.4% to 76.4% purely from reordering classifier tie-break tests, and uses Cohen's kappa against native-speaker raters to show agreement on raw answer correctness (kappa=0.932) far exceeds agreement on the failure category (kappa=0.093).</p>
+        <p class="entry-summary"><b>Why it matters:</b> A growing body of work reports failure-taxonomy percentages as if they were stable measurements; this shows the number is largely an artifact of classifier procedure and prompt wording, and proposes four cheap checks (co-occurrence reporting, tie-break permutation, shared validation, disagreement audits) before trusting one.</p>
+        <span class="entry-venue">Beesetty · arXiv 2026</span>
+        <span class="entry-links"><a href="https://arxiv.org/abs/2611.13140">[Source]</a></span>
+      </article>
+
+      <article class="entry">
+        <div class="entry-meta"><span class="pill">In Practice</span></div>
+        <p class="entry-title"><a href="/research/#rising-standards-human-evaluation-drift">AI Isn't Getting Dumber, We're Getting Pickier: Rising Standards in Human Evaluation of Large Language Models</a></p>
+        <p class="entry-summary"><b>Method:</b> Analyzes 1.26 million blind Chatbot Arena votes on version-locked model pairs (May 2023–Aug 2024) and estimates month effects shared across models, using them to remove the common drift from each model's own pairs; checks hold within the same voter, the same pair, across arrival cohorts, and with prompt controls.</p>
+        <p class="entry-summary"><b>Why it matters:</b> The share of "both are bad" votes rose steadily for pairs of models that never changed, while relative rankings stayed flat — meaning absolute human-eval scores drift even when nothing about the models does, which matters for leaderboards and for any human feedback used to train models.</p>
+        <span class="entry-venue">Chen et al. · arXiv 2026</span>
+        <span class="entry-links"><a href="https://arxiv.org/abs/2611.14333">[Source]</a></span>
+      </article>
+
+      <article class="entry">
+        <div class="entry-meta"><span class="pill">Validity</span></div>
+        <p class="entry-title"><a href="/research/#when-both-sides-adapt-interactive-eval">When Both Sides Adapt: The Challenges of Evaluating Interactive LLM Systems</a></p>
+        <p class="entry-summary"><b>Method:</b> Formalizes offline benchmark evaluation and live A/B testing as estimators of two different estimands — a common-distribution effect versus an induced-distribution effect created by user adaptivity — shows their standard difference-in-means estimators converge to different targets, and derives a sufficient condition for when the two methods' model rankings are guaranteed to agree.</p>
+        <p class="entry-summary"><b>Why it matters:</b> Users change what and how they prompt based on what a model gives them, so an offline benchmark and a live experiment can rank the same two models differently even when both are estimated correctly; a stylized linear model also shows user adaptivity can inflate estimation variance beyond the usual sampling noise.</p>
+        <span class="entry-venue">Li · arXiv 2026</span>
+        <span class="entry-links"><a href="https://arxiv.org/abs/2611.17239">[Source]</a></span>
+      </article>
+
+      <h2>Considered, not added</h2>
+      <ul>
+        <li>Do Verifier Judgments Survive Abstraction? Measuring Verification Transport for LLM Agent Evaluation (arXiv 2611.18471): a careful controlled-view study of verifier reliability across abstraction boundaries (31% transport failure under macro abstraction), but the contribution is the experimental design and measured failure rates rather than a statistical estimator or inference method.</li>
+        <li>Black-Box Uncertainty Quantification for Large Language Models via Ensemble-of-Ensembles (arXiv 2611.18453): rigorous statistics (law-of-total-covariance decomposition, a bias-corrected nested Monte Carlo estimator), but it quantifies a single model's own aleatoric/epistemic uncertainty in its answers, not the evaluation of models against each other or a benchmark.</li>
+        <li>When Evaluators of AI Agents Disagree: An Empirical Study on tau2-bench (arXiv 2611.14581): reports judge-vs-native-scoring agreement at 56.2%, but the paper doesn't name or report an inter-annotator agreement statistic for its own two-annotator check, so the statistical contribution is thin.</li>
+        <li>Comparative Analysis of Agent Evaluation Frameworks: Stability, Detection, and Discovery in Enterprise Analytics Agents (arXiv 2611.14493): compares three evaluation harnesses with F1 and precision-recall, but no inferential statistics beyond repeated-measurement stability thresholds.</li>
+      </ul>
+    </div>
+
+    <footer class="site-foot">© Chloe Yang · Drafted by an agent, reviewed before publishing. The linked source is the authority.</footer>
+  </div>
+  <script src="/assets/site-nav.js"></script>
+</body>
+</html>
