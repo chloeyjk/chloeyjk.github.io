@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Weekly brief for the week of 2026-11-23: new work on agent evaluation and statistical methods.">
+  <title>Brief 2026-11-23 — Chloe Yang</title>
+  <link rel="stylesheet" href="/assets/site.css">
+</head>
+<body>
+  <div class="shell">
+    <div class="page-head">
+      <p class="kicker">Weekly brief · 2026-11-23</p>
+      <h1>A quiet week: one judge-replacement test, one lab's self-measured R&D acceleration</h1>
+      <p class="lede">2 new entries, 0 updates. Most new agent/LLM work this week was benchmarks without a statistical-method contribution, so this brief is short.</p>
+      <p class="meta"><a href="/research/briefs/">← All briefs</a> · Covers 2026-11-16 to 2026-11-23</p>
+    </div>
+
+    <div class="prose">
+      <h2>New this week</h2>
+      <article class="entry">
+        <div class="entry-meta"><span class="pill">LLM Judges</span></div>
+        <p class="entry-title"><a href="/research/#altra-test-annotator-replacement">AltRA-Test: An Alternative Annotator Test for LLM Judges Without Shared Annotators</a></p>
+        <p class="entry-summary"><b>Method:</b> A bootstrap non-inferiority test on inter-annotator agreement that swaps one human label per item for an LLM label, proven to hold asymptotic level alpha.</p>
+        <p class="entry-summary"><b>Why it matters:</b> Lifts the earlier Alternative Annotator Test's requirement that every item share the same human annotators, which held back its use on datasets labeled by different annotator subsets.</p>
+        <span class="entry-venue">Omar et al. · arXiv 2026</span>
+        <span class="entry-links"><a href="https://arxiv.org/abs/2611.26073">[Source]</a></span>
+      </article>
+
+      <article class="entry">
+        <div class="entry-meta"><span class="pill">In Practice</span></div>
+        <p class="entry-title"><a href="/research/#openai-rd-acceleration-jagged-frontier">Research acceleration: The jagged frontier</a></p>
+        <p class="entry-summary"><b>Method:</b> A trendline fit to 90%-bootstrap-interval capability-index scores, plus weighted-survey medians and task-duration-bucketed success rates.</p>
+        <p class="entry-summary"><b>Why it matters:</b> A second lab, after Anthropic/METR's assessment cataloged two weeks ago, publishing its own statistically-framed estimate of how much AI is accelerating its internal research.</p>
+        <span class="entry-venue">OpenAI · blog · Nov 2026</span>
+        <span class="entry-links"><a href="https://openai.com/index/research-acceleration-jagged-frontier/">[Source]</a></span>
+      </article>
+
+      <h2>Considered, not added</h2>
+      <ul>
+        <li>Thinking Harder Doesn't Lead to Better Choices: Reasoning Effort Increases the Confidence but Not the Correctness of LLM Shopping Agents (arXiv 2611.22033): claims statistical significance and calibration failures, but the abstract names no specific test or calibration metric, so the statistical contribution could not be verified from the source page.</li>
+        <li>SO-Arena (arXiv 2611.15777): new "decision reliability" benchmark, but reliability is a descriptive stability score, not formal statistical inference.</li>
+        <li>Dependable Long-Horizon LLM Agents (arXiv 2611.13254): a qualitative failure-trajectory annotation protocol with descriptive statistics only.</li>
+        <li>Grounded but Not Immune: Confirmation Bias in Agent-as-a-Judge (arXiv 2611.05662): outside the window, and reports percentages and a behavioral taxonomy with no formal statistical method.</li>
+        <li>Comparative Analysis of Agent Evaluation Frameworks (arXiv 2611.14493): outside the window; a precision/recall/F1 comparison with no significance testing or uncertainty quantification.</li>
+        <li>Several new agent/LLM benchmarks surfaced this week (SWEOps-Bench, NIBench, LEGION, EverydayBench, CompAct-Bench, AgenticFinBench, a tau-bench variant, Unfinished-Bench, TwinLab-Bench, DailySafe, S1CogBench, among others): excluded as benchmarks with no statistical-method contribution.</li>
+      </ul>
+    </div>
+
+    <footer class="site-foot">© Chloe Yang · Drafted by an agent, reviewed before publishing. The linked source is the authority.</footer>
+  </div>
+  <script src="/assets/site-nav.js"></script>
+</body>
+</html>
