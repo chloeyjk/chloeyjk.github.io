@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-09",
+  "updated": "2026-11-23",
   "items": [
     {
       "id": "brief-2026-09-29",
@@ -56,6 +56,14 @@
       "summary": "8 new entries, 0 updates. The strongest fits a BIC-selected mixture of Beta distributions to a handful of trials and derives Pass@k, Pass^k, and delta-method confidence intervals in closed form with no extra model calls.",
       "links": [{ "label": "Read brief", "url": "/research/briefs/2026-11-09.html" }],
       "added": "2026-11-09"
+    },
+    {
+      "id": "brief-2026-11-23",
+      "tag": "Weekly",
+      "title": "Week of 2026-11-23: a judge-replacement test without shared annotators, and a second lab's R&D acceleration estimate",
+      "summary": "2 new entries, 0 updates. The strongest extends the Alternative Annotator Test to datasets where different items are labeled by different human annotators, via a bootstrap non-inferiority test proven to hold asymptotic level alpha.",
+      "links": [{ "label": "Read brief", "url": "/research/briefs/2026-11-23.html" }],
+      "added": "2026-11-23"
     }
   ]
 }

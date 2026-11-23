@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-09",
+  "updated": "2026-11-23",
   "items": [
     {
       "id": "error-bars-for-evals",
@@ -643,6 +643,26 @@
       "venue": "METR blog · Nov 2026",
       "links": [{ "label": "Blog", "url": "https://metr.org/blog/2026-11-05-anthropic-ai-rd-acceleration-assessment/" }],
       "added": "2026-11-09"
+    },
+    {
+      "id": "altra-test-annotator-replacement",
+      "tag": "LLM Judges",
+      "topics": ["judges"],
+      "title": "AltRA-Test: An Alternative Annotator Test for LLM Judges Without Shared Annotators",
+      "summary": "Extends the Alternative Annotator Test — which assumed every item shares the same human annotators — to the common case where annotator subsets differ across items, using a bootstrap that swaps one human label per item for an LLM label and tests whether the resulting panel's inter-annotator agreement is non-inferior to an all-human panel; proves the test holds asymptotic level alpha and validates it across 18 LLMs, 5 prompting techniques, and 20 datasets spanning text, image, audio, and video.",
+      "venue": "Omar et al. · arXiv 2026",
+      "links": [{ "label": "arXiv", "url": "https://arxiv.org/abs/2611.26073" }],
+      "added": "2026-11-23"
+    },
+    {
+      "id": "openai-rd-acceleration-jagged-frontier",
+      "tag": "In Practice",
+      "topics": ["practice", "uncertainty"],
+      "title": "Research acceleration: The jagged frontier",
+      "summary": "OpenAI's internal report on how much AI accelerates its own R&D, fitting a trendline to 90%-bootstrap-interval capability-index scores across nine record-setting releases (16.4 points/year since August 2025) and estimating zero-intervention task success rates by task-duration bucket from a 101-person research-staff survey.",
+      "venue": "OpenAI · blog · Nov 2026",
+      "links": [{ "label": "Blog", "url": "https://openai.com/index/research-acceleration-jagged-frontier/" }],
+      "added": "2026-11-23"
     }
   ]
 }
